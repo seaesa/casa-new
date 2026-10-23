@@ -222,42 +222,93 @@ html.menu-open .site-header .logo-brand { opacity: 0; }
 .search__empty { padding: 12px 8px; color: var(--muted-light); }
 
 /* =========================================================
-   Hero — video sits under the transparent header
+   Hero "forge" — scroll scrubs the video (frame sequence on a canvas).
+   The section is tall; its inner stage sticks while scroll progress picks the frame.
+   It sits under the transparent header.
    ========================================================= */
-.hero {
-  position: relative; isolation: isolate;
-  min-height: 100vh; min-height: 100svh;
-  display: flex; align-items: flex-end;
-  overflow: hidden; background: #000;
-}
-.hero__media { position: absolute; inset: 0; z-index: -1; }
-.hero__video { width: 100%; height: 100%; object-fit: cover; }
-.hero__shade {
+.forge { position: relative; height: 400vh; background: #000; }
+.forge__pin { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; isolation: isolate; }
+.forge__stage { position: absolute; inset: 0; z-index: -1; }
+.forge__stage picture, .forge__poster, .forge__canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.forge__poster { object-fit: cover; }
+.forge__shade {
   position: absolute; inset: 0;
   background:
     linear-gradient(to top, rgba(0, 0, 0, .72) 0%, rgba(0, 0, 0, .25) 45%, transparent 70%),
-    linear-gradient(to right, rgba(0, 0, 0, .35), transparent 60%);
+    linear-gradient(to right, rgba(0, 0, 0, .38), transparent 60%);
 }
-.hero__content { padding-bottom: clamp(56px, 12vh, 120px); }
+.forge__ui {
+  position: relative; height: 100%;
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 40px;
+  padding-bottom: clamp(84px, 14vh, 140px);
+}
+.forge__chapters { display: grid; }
+.forge__ch {
+  grid-area: 1 / 1; align-self: end;
+  opacity: 0; visibility: hidden; transform: translateY(26px);
+  transition: opacity .55s var(--ease-out), transform .8s var(--ease-out), visibility 0s linear .55s;
+}
+.forge__ch.is-active { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.forge__h { font-size: clamp(30px, 3.6vw + 8px, 60px); font-weight: 700; line-height: 1.08; letter-spacing: -.02em; max-width: 15ch; text-wrap: balance; }
+.forge__ch p:not(.hero__lead) { margin-top: 16px; max-width: 44ch; color: rgba(255, 255, 255, .84); font-size: clamp(15px, .5vw + 13px, 18px); }
+.forge__ch .btn-glass { margin-top: 28px; }
+
 .hero__title { font-size: clamp(40px, 6.4vw, 88px); font-weight: 700; line-height: 1.02; letter-spacing: -.025em; }
 .hero__title .line { display: block; overflow: hidden; padding-bottom: .06em; }
 .hero__title .line > span { display: inline-block; }
-.hero__lead { margin-top: 18px; max-width: 46ch; color: rgba(255, 255, 255, .82); font-size: clamp(15px, .5vw + 13px, 18px); }
-.hero__cta { margin-top: 28px; }
+.hero__lead { margin-top: 18px; max-width: 46ch; color: rgba(255, 255, 255, .84); font-size: clamp(15px, .5vw + 13px, 18px); }
 @media (prefers-reduced-motion: no-preference) {
   html.js .hero__title .line > span { transform: translateY(110%); }
   html.js .hero__lead, html.js .hero__cta { opacity: 0; transform: translateY(16px); }
-  html.js .hero__toggle { opacity: 0; }
 }
-.hero__toggle {
-  position: absolute; right: var(--gutter); bottom: clamp(20px, 4vh, 40px);
-  width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
-  border: 1px solid rgba(255, 255, 255, .35); color: var(--white); background: rgba(0, 0, 0, .25);
-  transition: background-color .25s;
+
+/* Progress gauge (desktop) */
+.forge__gauge { display: grid; grid-template-columns: auto auto; gap: 0 14px; height: min(240px, 32vh); margin-bottom: 6px; }
+.forge__meter { grid-row: 1; position: relative; width: 2px; height: 100%; background: rgba(255, 255, 255, .2); }
+.forge__fill { position: absolute; inset: 0; background: var(--red-hover); transform-origin: bottom; transform: scaleY(var(--p, 0)); }
+.forge__steps { grid-row: 1; position: relative; height: 100%; min-width: 92px; }
+.forge__steps li {
+  position: absolute; left: 0; transform: translateY(50%);
+  font-size: 13px; font-weight: 600; white-space: nowrap; color: rgba(255, 255, 255, .45); transition: color .3s;
 }
-@media (hover: hover) { .hero__toggle:hover { background: rgba(255, 255, 255, .15); } }
-.hero__toggle .i-play, .hero__toggle[aria-pressed="true"] .i-pause { display: none; }
-.hero__toggle[aria-pressed="true"] .i-play { display: block; }
+.forge__steps li.is-done { color: rgba(255, 255, 255, .78); }
+.forge__steps li.is-current { color: #ff6b6f; }
+.forge__pct { grid-column: 1 / -1; margin-top: 14px; font-size: 28px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1; }
+.forge__pct span { display: inline-block; min-width: 2.2ch; text-align: right; }
+
+.forge__foot { position: absolute; left: 0; right: 0; bottom: clamp(16px, 3vh, 28px); display: flex; justify-content: center; pointer-events: none; }
+.forge__skip {
+  pointer-events: auto; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 8px 18px;
+  border: 1px solid rgba(255, 255, 255, .3); border-radius: 999px; background: rgba(0, 0, 0, .28);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  color: rgba(255, 255, 255, .88); font-size: 14px; font-weight: 600;
+  transition: opacity .4s, visibility .4s, background-color .25s;
+}
+@media (hover: hover) { .forge__skip:hover { background: rgba(255, 255, 255, .16); } }
+.forge.is-ending .forge__skip { opacity: 0; visibility: hidden; }
+@media (prefers-reduced-motion: no-preference) {
+  .forge__skip svg { animation: nudge 1.8s var(--ease-in-out) infinite; }
+}
+@keyframes nudge { 0%, 100% { transform: none; } 50% { transform: translateY(3px); } }
+.forge__bar { display: none; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: rgba(255, 255, 255, .14); }
+.forge__bar span { display: block; height: 100%; background: var(--red-hover); transform-origin: left; transform: scaleX(var(--p, 0)); }
+
+@media (max-width: 767px) {
+  .forge { height: 330vh; }
+  .forge__ui { grid-template-columns: minmax(0, 1fr); padding-bottom: calc(92px + env(safe-area-inset-bottom)); }
+  .forge__gauge { display: none; }
+  .forge__bar { display: block; }
+  .forge__foot { bottom: calc(22px + env(safe-area-inset-bottom)); }
+}
+@media (max-height: 520px) and (min-aspect-ratio: 5/4) {
+  .forge__ui { padding-bottom: 72px; }
+  .forge__gauge { display: none; }
+  .forge__bar { display: block; }
+  .hero__title { font-size: 40px; }
+  .forge__h { font-size: 30px; }
+  .forge__ch .btn-glass { margin-top: 16px; }
+  .hero__lead, .forge__ch p:not(.hero__lead) { font-size: 14px; margin-top: 10px; }
+}
 
 /* =========================================================
    Solutions — pinned cross-fade (wide screens) / stacked (mobile)

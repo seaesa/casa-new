@@ -4,7 +4,8 @@
   <!-- @include head -->
   <title>Casa+ | Gạch gốm kiến trúc in 3D</title>
   <meta name="description" content="Casa+ nghiên cứu, thiết kế và chế tác gạch gốm kiến trúc bằng công nghệ in 3D: gạch ốp tường, gạch lát sàn, lam hoa gió, gốm sứ và tranh phù điêu.">
-  <link rel="preload" as="image" href="/assets/img/hero-poster.webp">
+  <link rel="preload" as="image" href="/assets/hero/d/000.webp" media="(min-aspect-ratio: 4/5)">
+  <link rel="preload" as="image" href="/assets/hero/m/000.webp" media="(max-aspect-ratio: 4/5)">
   <script type="module" src="/src/js/main.js"></script>
 </head>
 <body data-page="home" id="top">
@@ -28,28 +29,63 @@
   <!-- @include header -->
 
   <main id="main">
-    <!-- Hero: video nằm dưới thanh điều hướng (header trong suốt đè lên) -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__media">
-        <video class="hero__video" autoplay muted loop playsinline preload="metadata"
-               poster="/assets/img/hero-poster.webp" aria-hidden="true" data-hero-video>
-          <source src="/assets/video/hero-sm.mp4" type="video/mp4" media="(max-width: 767px)">
-          <source src="/assets/video/hero.mp4" type="video/mp4">
-        </video>
-        <div class="hero__shade"></div>
+    <!-- Hero: cuộn để tua video (chuỗi khung hình vẽ lên canvas), nằm dưới thanh điều hướng trong suốt -->
+    <section class="forge" id="hero" aria-labelledby="hero-title" data-forge>
+      <div class="forge__pin">
+        <div class="forge__stage" aria-hidden="true">
+          <picture>
+            <source media="(max-aspect-ratio: 4/5)" srcset="/assets/hero/m/000.webp">
+            <img class="forge__poster" src="/assets/hero/d/000.webp" width="1280" height="720" alt="" fetchpriority="high">
+          </picture>
+          <canvas class="forge__canvas"></canvas>
+          <div class="forge__shade"></div>
+        </div>
+
+        <div class="container forge__ui">
+          <div class="forge__chapters">
+            <article class="forge__ch is-active" data-from="0">
+              <h1 class="hero__title" id="hero-title">
+                <span class="line"><span>Gạch Gốm</span></span>
+                <span class="line"><span>Kiến Trúc</span></span>
+              </h1>
+              <p class="hero__lead">Nghiên cứu, thiết kế và chế tác gốm bằng công nghệ in 3D, từ viên gạch mẫu đến mặt dựng công trình.</p>
+              <a class="btn-glass hero__cta" href="#giai-phap">Xem thêm</a>
+            </article>
+            <article class="forge__ch" data-from="0.28">
+              <h2 class="forge__h">Không gian thành hình</h2>
+              <p>Nội thất, ánh sáng và bức tường đất nung hoà vào nhau thành một tổng thể ấm áp, mộc mạc.</p>
+            </article>
+            <article class="forge__ch" data-from="0.54">
+              <h2 class="forge__h">Phù điêu in 3D trên tường gốm</h2>
+              <p>Hoạ tiết được thiết kế tham số, in 3D trên đất nung rồi lắp lên tường như một tác phẩm nghệ thuật.</p>
+            </article>
+            <article class="forge__ch" data-from="0.8">
+              <h2 class="forge__h">Mỗi bức tường một câu chuyện</h2>
+              <p>Từ gạch mộc đến phù điêu độc bản, Casa+ chế tác theo đúng không gian của bạn.</p>
+              <a class="btn-glass btn-glass--sans" href="#giai-phap">Xem giải pháp</a>
+            </article>
+          </div>
+
+          <div class="forge__gauge" aria-hidden="true">
+            <div class="forge__meter"><span class="forge__fill"></span></div>
+            <ol class="forge__steps">
+              <li data-at="0">Không gian</li>
+              <li data-at="0.28">Nội thất</li>
+              <li data-at="0.54">Phù điêu</li>
+              <li data-at="0.8">Hoàn thiện</li>
+            </ol>
+            <p class="forge__pct"><span>0</span>%</p>
+          </div>
+        </div>
+
+        <div class="forge__foot">
+          <button class="forge__skip" type="button" data-forge-skip>
+            Bỏ qua
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="forge__bar" aria-hidden="true"><span></span></div>
       </div>
-      <div class="hero__content container">
-        <h1 class="hero__title" id="hero-title">
-          <span class="line"><span>Gạch Gốm</span></span>
-          <span class="line"><span>Kiến Trúc</span></span>
-        </h1>
-        <p class="hero__lead">Nghiên cứu, thiết kế và chế tác gốm bằng công nghệ in 3D, từ viên gạch mẫu đến mặt dựng công trình.</p>
-        <a class="btn-glass hero__cta" href="#giai-phap">Xem thêm</a>
-      </div>
-      <button class="hero__toggle" type="button" aria-label="Tạm dừng video" aria-pressed="false" data-video-toggle>
-        <svg class="i-pause" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12" rx="1" fill="currentColor"/><rect x="8.5" y="1" width="3.5" height="12" rx="1" fill="currentColor"/></svg>
-        <svg class="i-play" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9.5-5.5z" fill="currentColor"/></svg>
-      </button>
     </section>
 
     <!-- Giải pháp: chuyển cảnh từng ảnh, chữ và nút hiện theo sau -->

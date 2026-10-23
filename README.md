@@ -21,3 +21,5 @@ npm run build    # xuất ra dist/ để deploy (Vercel, Netlify, hosting tĩnh)
   Khi để trống, nút "Gửi thông tin" mở ứng dụng email với nội dung điền sẵn gửi tới dongxuong@casa-evolution.com.
 - URL sạch dạng `/slug/`: mỗi trang là một thư mục chứa `index.html`. URL cũ `/dich-vu.html`, `/dich-vu` được chuyển 301 sang `/dich-vu/`
   (dev/preview: plugin `clean-urls` trong `vite.config.js`; Vercel: `vercel.json`; Netlify/Cloudflare Pages: `public/_redirects`).
+- Hero trang chủ tua video theo cuộn: video được cắt sẵn thành 120 khung WebP trong `public/assets/hero/d` (ngang, 1280×720) và `public/assets/hero/m` (dọc, 432×720); logic ở `src/js/forge.js`.
+  Đổi video: cắt lại bằng `ffmpeg -i video.mp4 -vf "select='not(mod(n\,3))'" -fps_mode vfr -start_number 0 d/%03d.png` (chỉnh hệ số 3 để ra đúng 120 khung) rồi chuyển sang WebP bằng `cwebp -q 70`.

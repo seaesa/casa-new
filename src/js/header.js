@@ -15,7 +15,9 @@ export function initHeader() {
     const y = Math.max(0, window.scrollY);
     const menuOpen = root.classList.contains('menu-open');
 
-    header.classList.toggle('is-solid', y > SOLID_AT);
+    const forge = document.querySelector('[data-forge]');
+    const solidAt = forge ? forge.offsetTop + forge.offsetHeight - header.offsetHeight : SOLID_AT;
+    header.classList.toggle('is-solid', y > solidAt);
 
     if (!menuOpen && !root.classList.contains('is-locked')) {
       const delta = y - lastY;

@@ -1,5 +1,6 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { initForge } from './forge.js';
 
 // Same scene-by-scene behaviour on every screen size; only reduced motion gets the stacked layout.
 const PINNED = '(prefers-reduced-motion: no-preference)';
@@ -27,46 +28,16 @@ function fixHashLanding() {
   else window.addEventListener('load', () => requestAnimationFrame(align), { once: true });
 }
 
-/* ---------------- Hero: one orchestrated intro + accessible video control ---------------- */
+/* ---------------- Hero: scroll-scrubbed video + one orchestrated intro ---------------- */
 function initHero() {
-  const hero = document.querySelector('.hero');
-  if (!hero) return;
-  const video = hero.querySelector('[data-hero-video]');
-  const toggle = hero.querySelector('[data-video-toggle]');
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let userPaused = false;
+  if (!document.querySelector('[data-forge]')) return;
+  initForge();
 
-  if (video) {
-    if (reduce) { video.pause(); userPaused = true; setToggle(true); }
-    // Some browsers block autoplay until muted is set as a property.
-    video.muted = true;
-    const tryPlay = () => { if (!userPaused) video.play().catch(() => {}); };
-    tryPlay();
-
-    toggle?.addEventListener('click', () => {
-      userPaused = !video.paused ? true : false;
-      if (video.paused) { video.play().catch(() => {}); } else { video.pause(); }
-      setToggle(userPaused);
-    });
-
-    // Save battery: pause while the hero is off screen.
-    new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) tryPlay(); else video.pause();
-    }, { threshold: 0.05 }).observe(hero);
-  }
-
-  function setToggle(paused) {
-    if (!toggle) return;
-    toggle.setAttribute('aria-pressed', String(paused));
-    toggle.setAttribute('aria-label', paused ? 'Phát video' : 'Tạm dừng video');
-  }
-
-  if (reduce) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   gsap.timeline({ delay: .15 })
     .to('.hero__title .line > span', { y: 0, duration: 1.2, ease: 'expo.out', stagger: .12 })
     .to('.hero__lead', { opacity: 1, y: 0, duration: .9, ease: 'power3.out' }, '-=.75')
-    .to('.hero__cta', { opacity: 1, y: 0, duration: .9, ease: 'power3.out' }, '-=.7')
-    .to('.hero__toggle', { opacity: 1, duration: .6 }, '-=.6');
+    .to('.hero__cta', { opacity: 1, y: 0, duration: .9, ease: 'power3.out' }, '-=.7');
 }
 
 /* ---------------- Solutions: scene change, then words, then button ---------------- */
