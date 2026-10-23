@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <!-- @include head -->
+  <title>Casa+ | Gạch gốm kiến trúc in 3D</title>
+  <meta name="description" content="Casa+ nghiên cứu, thiết kế và chế tác gạch gốm kiến trúc bằng công nghệ in 3D: gạch ốp tường, gạch lát sàn, lam hoa gió, gốm sứ và tranh phù điêu.">
+  <link rel="preload" as="image" href="/assets/img/hero-poster.webp">
+  <script type="module" src="/src/js/main.js"></script>
+</head>
+<body data-page="home" id="top">
+  <svg class="visually-hidden" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19C5 10.5 10.5 5 19 5c0 8.5-5.5 14-14 14Z"/><path d="M5 19 14 10"/><path d="M9.5 14.5h3.5M11.5 12.5V9"/></symbol>
+      <symbol id="i-gem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M7 4h10l4 5-9 11L3 9z"/><path d="M3 9h18M9.5 4 8 9l4 11 4-11-1.5-5"/></symbol>
+      <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="4" width="16" height="16"/><path d="M9.33 4v16M14.67 4v16M4 9.33h16M4 14.67h16"/></symbol>
+      <symbol id="i-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V6.5a1.5 1.5 0 0 1 3 0V11M11 11V4.5a1.5 1.5 0 0 1 3 0V11M14 11V6a1.5 1.5 0 0 1 3 0v7.5c0 4-2.6 6.5-6 6.5-2.4 0-3.9-1.1-5.3-3.2L3.8 13.6a1.5 1.5 0 0 1 2.5-1.7L8 14"/></symbol>
+      <symbol id="i-tile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="4" width="16" height="16"/><rect x="8" y="8" width="8" height="8"/><path d="M12 4v4M12 16v4M4 12h4M16 12h4"/></symbol>
+      <symbol id="i-pattern" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M12 2.5 21.5 12 12 21.5 2.5 12z"/><path d="M12 7l5 5-5 5-5-5z"/><path d="M12 10.3 13.7 12 12 13.7 10.3 12z"/></symbol>
+      <symbol id="i-wind" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M3 8.5h11a2.75 2.75 0 1 0-2.75-2.75"/><path d="M3 12.5h15.5a2.75 2.75 0 1 1-2.75 2.75"/><path d="M3 16.5h7"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M12 3 20 6v6c0 4.8-3.4 8-8 9-4.6-1-8-4.2-8-9V6z"/><path d="M12 7.5c-2.8 2.2-3 6.2 0 9 3-2.8 2.8-6.8 0-9Z"/></symbol>
+      <symbol id="i-vase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M9 3h6M10 3v3.2C7 8.2 5.5 11 5.5 14.5A5.5 5.5 0 0 0 11 20h2a5.5 5.5 0 0 0 5.5-5.5c0-3.5-1.5-6.3-4.5-8.3V3"/><path d="M7 13.5h10"/></symbol>
+      <symbol id="i-flower" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="7.3" r="3"/><circle cx="16.7" cy="12" r="3"/><circle cx="12" cy="16.7" r="3"/><circle cx="7.3" cy="12" r="3"/><circle cx="12" cy="12" r="1.3"/></symbol>
+      <symbol id="i-house" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5h4v5"/><path d="M8 12.5h2M14 12.5h2"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></symbol>
+    </defs>
+  </svg>
+  <!-- @include header -->
+
+  <main id="main">
+    <!-- Hero: video nằm dưới thanh điều hướng (header trong suốt đè lên) -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__media">
+        <video class="hero__video" autoplay muted loop playsinline preload="metadata"
+               poster="/assets/img/hero-poster.webp" aria-hidden="true" data-hero-video>
+          <source src="/assets/video/hero-sm.mp4" type="video/mp4" media="(max-width: 767px)">
+          <source src="/assets/video/hero.mp4" type="video/mp4">
+        </video>
+        <div class="hero__shade"></div>
+      </div>
+      <div class="hero__content container">
+        <h1 class="hero__title" id="hero-title">
+          <span class="line"><span>Gạch Gốm</span></span>
+          <span class="line"><span>Kiến Trúc</span></span>
+        </h1>
+        <p class="hero__lead">Nghiên cứu, thiết kế và chế tác gốm bằng công nghệ in 3D, từ viên gạch mẫu đến mặt dựng công trình.</p>
+        <a class="btn-glass hero__cta" href="#giai-phap">Xem thêm</a>
+      </div>
+      <button class="hero__toggle" type="button" aria-label="Tạm dừng video" aria-pressed="false" data-video-toggle>
+        <svg class="i-pause" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12" rx="1" fill="currentColor"/><rect x="8.5" y="1" width="3.5" height="12" rx="1" fill="currentColor"/></svg>
+        <svg class="i-play" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9.5-5.5z" fill="currentColor"/></svg>
+      </button>
+    </section>
+
+    <!-- Giải pháp: chuyển cảnh từng ảnh, chữ và nút hiện theo sau -->
+    <section class="solutions" id="giai-phap" aria-label="Giải pháp công nghệ in 3D chế tác gốm thực tế" data-solutions>
+      <h2 class="visually-hidden">Giải Pháp Công Nghệ In 3D Chế Tác Gốm Thực Tế</h2>
+      <div class="solutions__stage" data-stage>
+        <article class="slide" data-slide aria-label="1 / 5: Gạch nung ốp tường">
+          <div class="slide__media" style="--pos: 58% center">
+            <img src="/assets/img/solution-1.webp" srcset="/assets/img/solution-1-sm.webp 960w, /assets/img/solution-1.webp 1920w" sizes="100vw" width="1920" height="1081" alt="Gạch nung ốp tường trong phòng khách hiện đại">
+            <div class="slide__shade"></div>
+            <div class="slide__dim"></div>
+          </div>
+          <div class="slide__body">
+            <div class="slide__info">
+              <p class="slide__eyebrow"><span>Vietnamese Terracotta Bricks</span></p>
+              <h3 class="slide__name"><span class="slide__name-main">Gạch Nung</span> <span class="slide__name-sub">Ốp Tường</span></h3>
+              <p class="slide__tagline">Vẻ đẹp truyền thống<br>trong không gian hiện đại</p>
+              <ul class="slide__feats"><li><svg width="26" height="26" aria-hidden="true"><use href="#i-leaf"/></svg><span>Tự nhiên<br>bền vững</span></li><li><svg width="26" height="26" aria-hidden="true"><use href="#i-gem"/></svg><span>Thẩm mỹ<br>tinh tế</span></li><li><svg width="26" height="26" aria-hidden="true"><use href="#i-grid"/></svg><span>Đa dạng<br>ứng dụng</span></li></ul>
+            </div>
+            <p class="slide__title" aria-hidden="true"><span class="line">Giải Pháp Công Nghệ In 3D</span> <span class="line">Chế Tác Gốm Thực Tế</span></p>
+            <a class="btn-glass slide__cta" href="/dich-vu/">Xem thêm<span class="visually-hidden"> về gạch nung ốp tường</span></a>
+          </div>
+        </article>
+        <article class="slide" data-slide aria-label="2 / 5: Gạch lát sàn đất nung">
+          <div class="slide__media" style="--pos: 46% center">
+            <img src="/assets/img/solution-2.webp" srcset="/assets/img/solution-2-sm.webp 960w, /assets/img/solution-2.webp 1920w" sizes="100vw" width="1920" height="1081" loading="lazy" alt="Gạch lát sàn đất nung thủ công trong phòng khách">
+            <div class="slide__shade"></div>
+            <div class="slide__dim"></div>
+          </div>
+          <div class="slide__body">
+            <div class="slide__info">
+              <p class="slide__eyebrow"><span>Gạch đất nung thủ công</span></p>
+              <h3 class="slide__name"><span class="slide__name-main">Gạch Lát Sàn</span> <span class="slide__name-sub">Đất Nung Thủ Công</span></h3>
+              <p class="slide__tagline">Vẻ đẹp mộc mạc từ đất<br>cho không gian sống bền vững</p>
+              <ul class="slide__feats"><li><svg width="26" height="26" aria-hidden="true"><use href="#i-leaf"/></svg><span>Thân thiện<br>môi trường</span></li><li><svg width="26" height="26" aria-hidden="true"><use href="#i-hand"/></svg><span>Thủ công<br>truyền thống</span></li><li><svg width="26" height="26" aria-hidden="true"><use href="#i-tile"/></svg><span>Độ bền<br>vượt thời gian</span></li><li><svg width="26" height="26" aria-hidden="true"><use href="#i-pattern"/></svg><span>Đa dạng<br>màu sắc &amp; bề mặt</span></li></ul>
+            </div>
+            <p class="slide__title" aria-hidden="true"><span class="line">Giải Pháp Công Nghệ In 3D</span> <span class="line">Chế Tác Gốm Thực Tế</span></p>
+            <a class="btn-glass slide__cta" href="/dich-vu/">Xem thêm<span class="visually-hidden"> về gạch lát sàn đất nung</span></a>
+          </div>
+        </article>
+        <article class="slide" data-slide aria-label="3 / 5: Lam hoa gió">
+          <div class="slide__media" style="--pos: 70% center">
+            <img src="/assets/img/solution-3.webp" srcset="/assets/img/solution-3-sm.webp 960w, /assets/img/solution-3.webp 1920w" sizes="100vw" width="1920" height="1081" loading="lazy" alt="Lam hoa gió bằng gốm trong không gian sống">
+            <div class="slide__shade"></div>
+            <div class="slide__dim"></div>
+          </div>
+          <div class="slide__body">
+            <div class="slide__info">
+              <p class="slide__eyebrow"><span>Lam hoa gió</span></p>
+              <h3 class="slide__name"><span class="slide__name-main">Lam Hoa Gió</span> <span class="slide__name-sub">Hơi Thở Từ Thiên Nhiên</span></h3>
+              <p class="slide__tagline">Giải pháp kiến trúc độc đáo<br>cho không gian sống hiện đại</p>
+              <ul class="slide__feats"><li><svg width="26" height="26" aria-hidden="true"><use href="#i-wind"/></svg><span>Thông gió<br>tự nhiên</span></li><li><svg width="26" height="26" aria-hidden="true"><use href="#i-sun"/></svg><span>Đón sáng<br>hiệu quả</span></li><li><svg width="26" height="26" aria-hidden="true"><use href="#i-leaf"/></svg><span>Thẩm mỹ<br>tinh tế</span></li><li><svg width="26" height="26" aria-hidden="true"><use href="#i-shield"/></svg><span>Bền vững<br>theo thời gian</span></li></ul>
+            </div>
+            <p class="slide__title" aria-hidden="true"><span class="line">Giải Pháp Công Nghệ In 3D</span> <span class="line">Chế Tác Gốm Thực Tế</span></p>
+            <a class="btn-glass slide__cta" href="/dich-vu/">Xem thêm<span class="visually-hidden"> về lam hoa gió</span></a>
+          </div>
+        </article>
+        <article class="slide" data-slide aria-label="4 / 5: Gốm sứ">
+          <div class="slide__media" style="--pos: 32% center">
+            <img src="/assets/img/solution-4.webp" srcset="/assets/img/solution-4-sm.webp 960w, /assets/img/solution-4.webp 1920w" sizes="100vw" width="1920" height="1081" loading="lazy" alt="Gốm sứ trang trí trong không gian sống">
+            <div class="slide__shade"></div>
+            <div class="slide__dim"></div>
+          </div>
+          <div class="slide__body">
+            <div class="slide__info">
+              <p class="slide__eyebrow"><span>Nội thất gốm sứ</span></p>
+              <h3 class="slide__name"><span class="slide__name-main">Gốm Sứ</span> <span class="slide__name-sub">Trong Không Gian Sống</span></h3>
+              <p class="slide__tagline">Giá trị truyền thống<br>trong phong cách hiện đại</p>
+              <ul class="slide__feats"><li><svg width="26" height="26" aria-hidden="true"><use href="#i-vase"/></svg><span>Thủ công<br>tinh xảo</span></li><li><svg width="26" height="26" aria-hidden="true"><use href="#i-leaf"/></svg><span>Chất liệu<br>tự nhiên</span></li><li><svg width="26" height="26" aria-hidden="true"><use href="#i-flower"/></svg><span>Hoa văn<br>đậm bản sắc</span></li><li><svg width="26" height="26" aria-hidden="true"><use href="#i-house"/></svg><span>Tôn vinh<br>không gian Việt</span></li></ul>
+            </div>
+            <p class="slide__title" aria-hidden="true"><span class="line">Giải Pháp Công Nghệ In 3D</span> <span class="line">Chế Tác Gốm Thực Tế</span></p>
+            <a class="btn-glass slide__cta" href="/dich-vu/">Xem thêm<span class="visually-hidden"> về gốm sứ</span></a>
+          </div>
+        </article>
+        <article class="slide" data-slide aria-label="5 / 5: Tranh phù điêu">
+          <div class="slide__media" style="--pos: 68% center">
+            <img src="/assets/img/solution-5.webp" srcset="/assets/img/solution-5-sm.webp 960w, /assets/img/solution-5.webp 1920w" sizes="100vw" width="1920" height="1083" loading="lazy" alt="Tranh phù điêu gốm trên tường phòng khách">
+            <div class="slide__shade"></div>
+            <div class="slide__dim"></div>
+          </div>
+          <div class="slide__body">
+            <div class="slide__info">
+              <p class="slide__eyebrow"><span>Tranh phù điêu</span></p>
+              <h3 class="slide__name"><span class="slide__name-main">Tranh Phù Điêu</span> <span class="slide__name-sub">Nghệ Thuật Từ Đất Và Lửa</span></h3>
+              <p class="slide__tagline">Tạo nên chiều sâu không gian<br>với những đường nét vĩnh cửu</p>
+              <ul class="slide__feats"><li><svg width="26" height="26" aria-hidden="true"><use href="#i-leaf"/></svg><span>Chất liệu<br>đất nung tự nhiên</span></li><li><svg width="26" height="26" aria-hidden="true"><use href="#i-flower"/></svg><span>Thủ công<br>tinh xảo</span></li><li><svg width="26" height="26" aria-hidden="true"><use href="#i-layers"/></svg><span>Đa dạng<br>mẫu mã</span></li><li><svg width="26" height="26" aria-hidden="true"><use href="#i-shield"/></svg><span>Bền bỉ<br>theo thời gian</span></li></ul>
+            </div>
+            <p class="slide__title" aria-hidden="true"><span class="line">Giải Pháp Công Nghệ In 3D</span> <span class="line">Chế Tác Gốm Thực Tế</span></p>
+            <a class="btn-glass slide__cta" href="/dich-vu/">Xem thêm<span class="visually-hidden"> về tranh phù điêu</span></a>
+          </div>
+        </article>
+
+        <nav class="slides-nav" aria-label="Chọn giải pháp" data-slides-nav>
+          <span class="slides-nav__count" aria-hidden="true"><b data-slide-current>01</b> / 05</span>
+          <ol>
+            <li><button type="button" aria-label="Giải pháp 1: Gạch nung ốp tường" aria-current="true"></button></li>
+            <li><button type="button" aria-label="Giải pháp 2: Gạch lát sàn đất nung"></button></li>
+            <li><button type="button" aria-label="Giải pháp 3: Lam hoa gió"></button></li>
+            <li><button type="button" aria-label="Giải pháp 4: Gốm sứ"></button></li>
+            <li><button type="button" aria-label="Giải pháp 5: Tranh phù điêu"></button></li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Sơ đồ tiến trình: mỗi ô dẫn đến đúng phần tương ứng trong bài viết -->
+    <section class="section process" id="tien-trinh" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 class="section-title" id="process-title">Sơ Đồ Tiến Trình</h2>
+          <p class="section-lead">Năm bước từ câu chuyện của công trình đến viên gạch được lắp đặt. Chọn một bước để đọc chi tiết.</p>
+        </div>
+      </div>
+      <div class="container-wide">
+        <ol class="steps" data-steps>
+          <li class="steps__item" data-reveal style="--i:0">
+            <a class="step-card" href="/tien-trinh/#cau-chuyen">
+              <span class="step-card__media"><img src="/assets/img/process-story-sm.webp" width="640" height="357" loading="lazy" alt=""></span>
+              <span class="step-card__body">
+                <span class="step-card__title">Câu Chuyện</span>
+                <span class="step-card__text">Lắng nghe chủ đầu tư, kiến trúc sư và bối cảnh để định hình ý niệm cho công trình.</span>
+              </span>
+            </a>
+            <img class="steps__arrow" src="/assets/figma/arrow.svg" width="38" height="38" alt="">
+          </li>
+          <li class="steps__item" data-reveal style="--i:1">
+            <a class="step-card" href="/tien-trinh/#nghien-cuu">
+              <span class="step-card__media"><img src="/assets/img/process-research-sm.webp" width="640" height="357" loading="lazy" alt=""></span>
+              <span class="step-card__body">
+                <span class="step-card__title">Nghiên Cứu</span>
+                <span class="step-card__text">Đông xưởng – Trung tâm R&amp;D: nghiên cứu thuật toán thiết kế tham số cho gốm in 3D.</span>
+              </span>
+            </a>
+            <img class="steps__arrow" src="/assets/figma/arrow.svg" width="38" height="38" alt="">
+          </li>
+          <li class="steps__item" data-reveal style="--i:2">
+            <a class="step-card" href="/tien-trinh/#thiet-ke">
+              <span class="step-card__media"><img src="/assets/img/process-design-sm.webp" width="640" height="357" loading="lazy" alt=""></span>
+              <span class="step-card__body">
+                <span class="step-card__title">Thiết Kế</span>
+                <span class="step-card__text">Văn phòng tư vấn thiết kế Nam xưởng: phát triển ý niệm thẩm mỹ và kiểu dáng bộ sưu tập.</span>
+              </span>
+            </a>
+            <img class="steps__arrow" src="/assets/figma/arrow.svg" width="38" height="38" alt="">
+          </li>
+          <li class="steps__item" data-reveal style="--i:3">
+            <a class="step-card" href="/tien-trinh/#san-xuat">
+              <span class="step-card__media"><img src="/assets/img/process-production-sm.webp" width="640" height="357" loading="lazy" alt=""></span>
+              <span class="step-card__body">
+                <span class="step-card__title">Sản Xuất</span>
+                <span class="step-card__text">Tây xưởng: chế tác nguyên mẫu trên hệ thống máy in 3D gốm, rồi sản xuất theo đơn hàng.</span>
+              </span>
+            </a>
+            <img class="steps__arrow" src="/assets/figma/arrow.svg" width="38" height="38" alt="">
+          </li>
+          <li class="steps__item" data-reveal style="--i:4">
+            <a class="step-card" href="/tien-trinh/#lap-dat">
+              <span class="step-card__media"><img src="/assets/img/process-install-sm.webp" width="640" height="357" loading="lazy" alt=""></span>
+              <span class="step-card__body">
+                <span class="step-card__title">Lắp Đặt</span>
+                <span class="step-card__text">Lắp dựng và hoàn thiện tại công trình theo hồ sơ kỹ thuật đã thống nhất.</span>
+              </span>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Dự án tiêu biểu -->
+    <section class="section projects" id="du-an" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head section-head--split" data-reveal>
+          <div>
+            <h2 class="section-title" id="projects-title">Dự Án Tiêu Biểu</h2>
+            <p class="section-lead">In 3D gốm, bê tông và gạch tráng men trong kiến trúc, nội thất và sản phẩm. Tuyển chọn từ board Pinterest của Đông xưởng, mỗi ảnh ghi rõ nguồn.</p>
+          </div>
+          <a class="btn-glass" href="https://www.pinterest.com/Dongxuongcasa/case-study-in3d-g%E1%BB%91m/" target="_blank" rel="noopener">Xem thêm<span class="visually-hidden"> trên Pinterest (mở thẻ mới)</span></a>
+        </div>
+      </div>
+      <div class="container-wide">
+        <ul class="masonry" data-projects aria-label="Danh sách dự án"></ul>
+      </div>
+    </section>
+
+    <!-- Hệ thống dịch vụ -->
+    <section class="section services" id="dich-vu" aria-labelledby="services-title">
+      <div class="container">
+        <h2 class="section-title" id="services-title" data-reveal>Hệ Thống Dịch Vụ Thiết Kế Và Sản Xuất</h2>
+        <div class="services__grid">
+          <article class="service-card" data-reveal style="--i:0">
+            <div class="service-card__media"><img src="/assets/img/process-design.webp" width="1600" height="893" loading="lazy" alt="Kiến trúc sư trao đổi mẫu gạch gốm cùng khách hàng"></div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Dịch vụ Tư vấn Thiết kế Mẫu Độc bản và Giải pháp Không gian</h3>
+              <p>Văn phòng tư vấn thiết kế Nam xưởng tư vấn kiến trúc – nội thất, giải pháp mặt dựng (facade) và thiết kế may đo (bespoke) các mẫu gạch gốm cao cấp theo yêu cầu riêng của chủ đầu tư và kiến trúc sư.</p>
+            </div>
+          </article>
+          <article class="service-card" data-reveal style="--i:1">
+            <div class="service-card__media"><img src="/assets/img/process-production.webp" width="1600" height="893" loading="lazy" alt="Máy in 3D gốm đang chế tác gạch mẫu tại xưởng"></div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Dịch vụ Gia công và Sản xuất Gạch Mẫu In 3D (Tây xưởng)</h3>
+              <p>Chế tác nguyên mẫu thực nghiệm (mock-up tỷ lệ 1:1) bằng công nghệ in 3D gốm, phát triển màu men theo hồ sơ thiết kế, và sản xuất cung ứng gạch gốm kiến trúc cho công trình.</p>
+            </div>
+          </article>
+          <a class="consult-card" href="/dich-vu/?nhu-cau=ca-nhan#lien-he" data-reveal style="--i:0">
+            <span class="consult-card__title">Tư Vấn Khách Hàng Cá Nhân</span>
+            <span class="consult-card__text">Nhà ở, căn hộ, quán cà phê: chọn mẫu gạch và cách ốp phù hợp với không gian của bạn.</span>
+            <span class="consult-card__go">Đăng ký tư vấn</span>
+          </a>
+          <a class="consult-card" href="/dich-vu/?nhu-cau=doanh-nghiep#lien-he" data-reveal style="--i:1">
+            <span class="consult-card__title">Tư Vấn Khách Hàng Doanh Nghiệp</span>
+            <span class="consult-card__text">Chủ đầu tư, văn phòng kiến trúc, nhà thầu: mẫu độc bản, mock-up 1:1 và cung ứng số lượng lớn.</span>
+            <span class="consult-card__go">Đăng ký tư vấn</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- @include footer -->
+
+  <dialog class="lightbox" aria-label="Chi tiết dự án" data-lightbox>
+    <div class="lightbox__inner">
+      <figure class="lightbox__figure">
+        <div class="lightbox__media"><img alt="" data-lb-img></div>
+        <figcaption class="lightbox__caption">
+          <p class="lightbox__cat" data-lb-cat></p>
+          <h3 class="lightbox__title" data-lb-title></h3>
+          <p class="lightbox__note" data-lb-note></p>
+          <p class="lightbox__links">
+            <a href="#" target="_blank" rel="noopener" data-lb-link>Xem nguồn gốc</a>
+            <a href="#" target="_blank" rel="noopener" data-lb-pin>Xem trên Pinterest</a>
+          </p>
+          <p class="lightbox__count" data-lb-count></p>
+        </figcaption>
+      </figure>
+      <button class="lightbox__btn lightbox__close" type="button" aria-label="Đóng" data-lb-close autofocus>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <button class="lightbox__btn lightbox__prev" type="button" aria-label="Dự án trước" data-lb-prev>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="lightbox__btn lightbox__next" type="button" aria-label="Dự án tiếp theo" data-lb-next>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </dialog>
+</body>
+</html>

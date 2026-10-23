@@ -1,0 +1,10 @@
+{
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/tien-trinh.html", "destination": "/tien-trinh/", "permanent": true },
+    { "source": "/gioi-thieu.html", "destination": "/gioi-thieu/", "permanent": true },
+    { "source": "/dich-vu.html", "destination": "/dich-vu/", "permanent": true },
+    { "source": "/:slug(tien-trinh|gioi-thieu|dich-vu)/index.html", "destination": "/:slug/", "permanent": true }
+  ]
+}
