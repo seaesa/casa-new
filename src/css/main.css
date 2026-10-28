@@ -538,16 +538,17 @@ html.menu-open .site-header .logo-brand { opacity: 0; }
 /* =========================================================
    Projects — masonry + lightbox
    ========================================================= */
-.masonry { columns: 7; column-gap: 20px; }
-.masonry li { break-inside: avoid; margin-bottom: 22px; }
+.projects__bleed { width: 100%; padding-inline: clamp(8px, 1vw, 14px); }
+.masonry { --masonry-gap: 16px; columns: 7; column-gap: var(--masonry-gap); }
+.masonry li { break-inside: avoid; margin-bottom: var(--masonry-gap); }
 .pin {
-  position: relative; display: block; width: 100%; overflow: hidden;
-  background: var(--stone); border-radius: 2px; box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+  position: relative; display: block; width: 100%; overflow: hidden; isolation: isolate;
+  background: var(--stone); border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, .3);
   text-align: left;
 }
 .pin img { width: 100%; height: auto; transition: transform .9s var(--ease-out); }
 .pin__info {
-  position: absolute; inset: auto 0 0; padding: 28px 12px 12px;
+  position: absolute; inset: auto 0 0; padding: 28px 14px 12px;
   background: linear-gradient(to top, rgba(0, 0, 0, .78), transparent);
   font-size: 13px; font-weight: 600; line-height: 1.35;
   opacity: 0; transform: translateY(8px); transition: opacity .35s, transform .45s var(--ease-out);
@@ -558,14 +559,13 @@ html.menu-open .site-header .logo-brand { opacity: 0; }
   .pin:hover .pin__info { opacity: 1; transform: none; }
 }
 .pin:focus-visible .pin__info { opacity: 1; transform: none; }
-.pin:focus-visible { outline-offset: 3px; }
+.pin:focus-visible { outline-offset: 3px; border-radius: 12px; }
 @media (max-width: 767px) {
-  .masonry { columns: 2; column-gap: 12px; }
-  .masonry li { margin-bottom: 12px; }
+  .masonry { --masonry-gap: 10px; columns: 2; }
+  .pin, .pin:focus-visible { border-radius: 10px; }
 }
 @media (min-width: 768px) and (max-width: 1099px) {
-  .masonry { columns: 4; column-gap: 16px; }
-  .masonry li { margin-bottom: 16px; }
+  .masonry { --masonry-gap: 14px; columns: 4; }
 }
 .projects__more { display: flex; justify-content: center; margin-top: 28px; }
 
@@ -580,7 +580,7 @@ html.menu-open .site-header .logo-brand { opacity: 0; }
   max-width: 1100px; max-height: 100%;
 }
 .lightbox__media { display: grid; place-items: center; min-height: 0; }
-.lightbox__media img { max-height: calc(100vh - 128px); max-height: calc(100dvh - 128px); width: auto; border-radius: 2px; object-fit: contain; }
+.lightbox__media img { max-height: calc(100vh - 128px); max-height: calc(100dvh - 128px); width: auto; border-radius: 8px; object-fit: contain; }
 .lightbox__cat { color: var(--red-hover); font-size: 13px; font-weight: 600; }
 .lightbox__title { margin-top: 6px; font-size: 22px; line-height: 1.3; }
 .lightbox__note { margin-top: 12px; color: var(--muted-light); font-size: 14px; overflow-wrap: anywhere; max-height: 9.5em; overflow: auto; }
