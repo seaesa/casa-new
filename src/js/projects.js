@@ -3,7 +3,7 @@ import { PROJECTS } from './projects-data.js';
 import { initReveal } from './reveal.js';
 import { lockScroll, unlockScroll } from './lock.js';
 
-const SHOWN = 21; // Figma grid: 7 columns × 3 rows
+const SHOWN = 34; // all curated pins — keeps every column full
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 export function initProjects() {
