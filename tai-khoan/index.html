@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <!-- @include head -->
+  <title>Tài khoản | Casa+</title>
+  <meta name="description" content="Đăng nhập hoặc đăng ký tài khoản Casa+ để theo dõi dự án, bộ sưu tập và tư vấn thiết kế gạch gốm kiến trúc in 3D.">
+  <script type="module" src="/src/js/main.js"></script>
+</head>
+<body data-page="account" id="top">
+  <!-- @include header -->
+
+  <main id="main">
+    <div class="page-top container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Trang Chủ</a></li>
+          <li><span aria-current="page">Tài Khoản</span></li>
+        </ol>
+      </nav>
+    </div>
+
+    <section class="section account" aria-labelledby="account-title">
+      <div class="container">
+        <div class="account-card" data-reveal>
+          <div class="account-card__media">
+            <img src="/assets/img/solution-4.webp" width="1920" height="1081" alt="Không gian trưng bày gốm sứ Casa+">
+          </div>
+
+          <div class="account-card__body">
+            <h1 class="account-card__title" id="account-title">Hi! Please enter your Account</h1>
+
+            <button class="account-google-btn" type="button" data-account-action="google">
+              <span class="account-google-btn__mark" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M21.6 12.23c0-.71-.06-1.4-.18-2.05H12v3.88h5.38a4.6 4.6 0 0 1-2 3.02v2.5h3.24c1.9-1.75 2.98-4.33 2.98-7.35Z" fill="#4285F4"/>
+                  <path d="M12 22c2.7 0 4.96-.9 6.62-2.42l-3.24-2.5c-.9.6-2.04.96-3.38.96-2.6 0-4.8-1.76-5.59-4.12H3.06v2.58A10 10 0 0 0 12 22Z" fill="#34A853"/>
+                  <path d="M6.41 13.92a6.02 6.02 0 0 1 0-3.84V7.5H3.06a10 10 0 0 0 0 9l3.35-2.58Z" fill="#FBBC05"/>
+                  <path d="M12 5.96c1.47 0 2.79.5 3.83 1.5l2.87-2.87C16.95 2.98 14.7 2 12 2A10 10 0 0 0 3.06 7.5l3.35 2.58C7.2 7.72 9.4 5.96 12 5.96Z" fill="#EA4335"/>
+                </svg>
+              </span>
+              <span>Or sign in with google</span>
+            </button>
+
+            <form class="account-form" novalidate data-account-form>
+              <div class="field">
+                <label for="acc-email">Email</label>
+                <input id="acc-email" name="email" type="email" autocomplete="email" required aria-describedby="e-acc-email">
+                <p class="field__error" id="e-acc-email" aria-live="polite"></p>
+              </div>
+
+              <div class="field">
+                <label for="acc-password">Password</label>
+                <input id="acc-password" name="password" type="password" autocomplete="current-password" required aria-describedby="e-acc-password">
+                <p class="field__error" id="e-acc-password" aria-live="polite"></p>
+              </div>
+
+              <p class="account-form__sublink">
+                <button class="account-google-link" type="button" data-account-action="google">Or sign in with google</button>
+              </p>
+
+              <div class="account-form__actions">
+                <button class="account-btn account-btn--primary" type="submit">Đăng Nhập</button>
+                <button class="account-btn account-btn--secondary" type="button" data-account-action="register">Đăng Ký</button>
+              </div>
+
+              <p class="account-form__status" role="status" aria-live="polite" data-account-status></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- @include footer -->
+</body>
+</html>

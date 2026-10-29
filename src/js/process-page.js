@@ -68,6 +68,8 @@ export function initProcessPage() {
     });
     document.fonts?.ready.then(settle);
     window.addEventListener('load', settle, { once: true });
+  } else if (steps[0]) {
+    setActive(steps[0].id);
   }
 
   window.addEventListener('popstate', () => {

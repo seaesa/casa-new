@@ -8,6 +8,8 @@ Site tĩnh nhiều trang (Vite + GSAP), dựng từ file Figma "WEBSITE THƯƠNG
 | Sơ đồ tiến trình | `tien-trinh/index.html` → `/tien-trinh/` (neo: `#cau-chuyen`, `#nghien-cuu`, `#thiet-ke`, `#san-xuat`, `#lap-dat`) |
 | Casa xin chào | `gioi-thieu/index.html` → `/gioi-thieu/` |
 | Dịch vụ + form liên hệ | `dich-vu/index.html` → `/dich-vu/` |
+| Sản phẩm | `san-pham/index.html` → `/san-pham/` (neo: `#phu-dieu`, `#op-tuong`, `#lam-hoa-gio`, `#do-decor`, `#ran-san-ho`) |
+| Tài khoản (đăng nhập / đăng ký) | `tai-khoan/index.html` → `/tai-khoan/` |
 
 ```bash
 npm install

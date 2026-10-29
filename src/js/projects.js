@@ -20,6 +20,23 @@ export function initProjects() {
     </li>`).join('');
   initReveal(list);
 
+  const collapse = document.querySelector('[data-projects-collapse]');
+  const toggleBtn = document.querySelector('[data-projects-toggle]');
+  if (collapse && toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const isCollapsed = collapse.classList.toggle('is-collapsed');
+      toggleBtn.setAttribute('aria-expanded', String(!isCollapsed));
+      toggleBtn.textContent = isCollapsed ? 'Xem thêm' : 'Thu gọn';
+      if (isCollapsed) {
+        const sec = document.getElementById('du-an');
+        if (sec && sec.getBoundingClientRect().top < -120) {
+          const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+          sec.scrollIntoView({ behavior: reduce ? 'instant' : 'smooth', block: 'start' });
+        }
+      }
+    });
+  }
+
   initLightbox(items, list);
 }
 

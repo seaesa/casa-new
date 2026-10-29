@@ -4,8 +4,8 @@ import { resolve } from 'node:path';
 
 const root = import.meta.dirname;
 
-// Each page lives in its own folder so URLs are clean: /tien-trinh/, /gioi-thieu/, /dich-vu/.
-const PAGES = ['tien-trinh', 'gioi-thieu', 'dich-vu'];
+// Each page lives in its own folder so URLs are clean: /tien-trinh/, /gioi-thieu/, /dich-vu/, /san-pham/, /tai-khoan/.
+const PAGES = ['tien-trinh', 'gioi-thieu', 'dich-vu', 'san-pham', 'tai-khoan'];
 
 // Replaces <!-- @include name --> with src/partials/name.html so every page
 // ships the same header, menu and footer as real HTML (no JS needed to see them).

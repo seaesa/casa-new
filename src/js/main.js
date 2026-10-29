@@ -50,6 +50,7 @@ if (page === 'home') {
 }
 if (page === 'process') import('./process-page.js').then((m) => m.initProcessPage());
 if (page === 'services') import('./contact-form.js').then((m) => m.initContactForm());
+if (page === 'account') import('./account.js').then((m) => m.initAccount());
 
 // Images that load late can change page height; keep pinned sections measured correctly.
 window.addEventListener('load', () => ScrollTrigger.refresh());
