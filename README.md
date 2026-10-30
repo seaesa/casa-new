@@ -7,7 +7,7 @@ Site HTML/CSS/JS tĩnh, không cần Node, không cần build. Chỉ cần đưa
 | Trang | File |
 |---|---|
 | Trang chủ | `index.html` |
-| Sơ đồ tiến trình | `tien-trinh/index.html` → `/tien-trinh/` (neo: `#cau-chuyen`, `#nghien-cuu`, `#thiet-ke`, `#san-xuat`, `#lap-dat`) |
+| Sơ đồ tiến trình | `tien-trinh/index.html` → `/tien-trinh/` (neo: `#cau-chuyen`, `#nghien-cuu`, `#thiet-ke`, `#san-xuat`, `#lap-dat`, `#phu-dieu`, `#op-tuong`, `#lam-hoa-gio`, `#do-decor`, `#ran-san-ho`) |
 | Casa xin chào | `gioi-thieu/index.html` → `/gioi-thieu/` |
 | Dịch vụ + form liên hệ | `dich-vu/index.html` → `/dich-vu/` |
 | Sản phẩm | `san-pham/index.html` → `/san-pham/` (neo: `#phu-dieu`, `#op-tuong`, `#lam-hoa-gio`, `#do-decor`, `#ran-san-ho`) |

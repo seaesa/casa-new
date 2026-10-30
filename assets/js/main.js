@@ -46,6 +46,7 @@ if (page === 'home') {
   import('./projects.js').then((m) => m.initProjects());
 }
 if (page === 'process') import('./process-page.js').then((m) => m.initProcessPage());
+if (page === 'products') import('./products.js').then((m) => m.initProducts());
 if (page === 'services') import('./contact-form.js').then((m) => m.initContactForm());
 if (page === 'account') import('./account.js').then((m) => m.initAccount());
 

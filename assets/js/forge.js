@@ -16,7 +16,6 @@ export function initForge() {
   const chapters = [...root.querySelectorAll('.forge__ch')];
   const steps = [...root.querySelectorAll('.forge__steps li')];
   const pctEl = root.querySelector('.forge__pct span');
-  const skip = root.querySelector('[data-forge-skip]');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
   const portrait = matchMedia('(max-aspect-ratio: 4/5)');
 
@@ -179,14 +178,6 @@ export function initForge() {
   const onChange = () => { resize(); startLoading(); target = progress(); requestTick(); };
   window.addEventListener('resize', onChange);
   portrait.addEventListener('change', onChange);
-
-  // "Bỏ qua" jumps past the hero to the solutions section.
-  skip?.addEventListener('click', () => {
-    const end = root.offsetTop + root.offsetHeight;
-    window.scrollTo({ top: end, behavior: 'instant' });
-    const next = document.getElementById('giai-phap');
-    if (next) { next.setAttribute('tabindex', '-1'); next.focus({ preventScroll: true }); }
-  });
 
   resize();
   startLoading();
