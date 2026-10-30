@@ -1,5 +1,3 @@
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { initForge } from './forge.js';
 
 // Same scene-by-scene behaviour on every screen size; only reduced motion gets the stacked layout.

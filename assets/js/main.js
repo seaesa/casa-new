@@ -1,6 +1,3 @@
-import '../css/main.css';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { initHeader } from './header.js';
 import { initMenu } from './menu.js';
 import { initSearch } from './search.js';

@@ -1,23 +1,17 @@
-import { gsap } from 'gsap';
 import { PROJECTS } from './projects-data.js';
 import { initReveal } from './reveal.js';
 import { lockScroll, unlockScroll } from './lock.js';
 
-const SHOWN = 34; // all curated pins — keeps every column full
-const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-
 export function initProjects() {
   const list = document.querySelector('[data-projects]');
   if (!list) return;
-  const items = PROJECTS.slice(0, SHOWN);
 
-  list.innerHTML = items.map((p, i) => `
-    <li data-reveal style="--i:${i % 7}">
-      <button class="pin" type="button" data-index="${i}" aria-haspopup="dialog">
-        <img src="${p.img}" width="${p.w}" height="${p.h}" alt="${esc(p.title)}" loading="lazy" decoding="async">
-        <span class="pin__info">${esc(p.title)}<small>${esc(p.cat)}${p.domain ? ` · ${esc(p.domain)}` : ''}</small></span>
-      </button>
-    </li>`).join('');
+  // The pins are already in the HTML (built by the prerenderProjects plugin);
+  // this module only binds the lightbox and the expand/collapse toggle.
+  const pins = [...list.querySelectorAll('.pin')];
+  if (!pins.length) return;
+  const items = pins.map((btn) => PROJECTS[Number(btn.dataset.index)]);
+
   initReveal(list);
 
   const collapse = document.querySelector('[data-projects-collapse]');

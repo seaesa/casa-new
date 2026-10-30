@@ -1,4 +1,3 @@
-import { gsap } from 'gsap';
 import { lockScroll, unlockScroll, trapFocus } from './lock.js';
 
 const reduceMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;

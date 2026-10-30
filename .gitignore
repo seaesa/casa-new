@@ -1,7 +1,5 @@
-node_modules
-dist
 .DS_Store
 .playwright-mcp
-
-.vercel
 .env*
+.vercel
+.vite

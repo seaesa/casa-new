@@ -1,0 +1,6 @@
+drive/
+.playwright-mcp/
+.vite/
+.git/
+.vercel/
+README.md

@@ -1,4 +1,3 @@
-import { gsap } from 'gsap';
 import { lockScroll, unlockScroll, trapFocus } from './lock.js';
 
 // Small built-in index of the site's pages and sections.
