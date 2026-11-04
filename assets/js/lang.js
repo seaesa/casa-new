@@ -39,6 +39,7 @@ const EN = {
   'projects.lead': '3D-printed ceramic, concrete and glazed brick across architecture, interiors and products. Curated from Đông xưởng’s Pinterest board, with the source noted on every image.',
   'projects.more': 'View more',
   'projects.less': 'Collapse',
+  'projects.hint': 'Tap the pin icon on any image to save it to your favourites.',
 
   'services.title': 'Design & Production Services',
   'services.consult': 'Book a consultation',

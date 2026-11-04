@@ -577,6 +577,21 @@ html:not(.js) .projects__more { display: none; }
 .lightbox__links a { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(255, 255, 255, .4); transition: color .2s; }
 .lightbox__links a[hidden] { display: none; }
 @media (hover: hover) { .lightbox__links a:hover { color: var(--red-hover); } }
+.lightbox__fav {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-top: 16px; padding: 10px 16px 10px 12px;
+  border: 1px solid rgba(255, 255, 255, .28); border-radius: 999px;
+  font-size: 13px; font-weight: 600; letter-spacing: .02em;
+  color: var(--white);
+  transition: border-color .25s, background-color .25s, color .25s;
+}
+.lightbox__fav svg { width: 19px; height: 19px; flex: none; transition: transform .2s var(--ease-out); }
+.lightbox__fav.is-on { background: var(--red); border-color: var(--red); }
+.lightbox__fav.is-on svg { fill: currentColor; transform: scale(1.06); }
+@media (hover: hover) {
+  .lightbox__fav:hover { border-color: var(--red-hover); color: var(--red-hover); }
+  .lightbox__fav.is-on:hover { background: var(--red-hover); color: var(--white); }
+}
 .lightbox__supplier { margin-top: 18px; border-top: 1px solid rgba(255, 255, 255, .14); }
 .lightbox__supplier:not(:has(dd:not(:empty))) { display: none; }
 .lightbox__supplier div {
@@ -1056,15 +1071,25 @@ body:has(.site-header:not(.is-hidden)) .stepnav { top: var(--bar-h); }
 .pin__fav {
   position: absolute; top: 8px; right: 8px; z-index: 2;
   display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
-  background: rgba(0, 0, 0, .48); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
-  color: var(--white); opacity: 0;
+  background: rgba(0, 0, 0, .55); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  color: var(--white); opacity: .9;
   transition: opacity .25s, background-color .25s, transform .2s var(--ease-out);
 }
-.pin__fav svg { width: 17px; height: 17px; }
+.pin__fav svg { width: 17px; height: 17px; transition: transform .2s var(--ease-out); }
 .pin__fav.is-on { opacity: 1; background: var(--red); }
-.pin__fav:focus-visible, .pin:hover .pin__fav { opacity: 1; }
-@media (hover: none) { .pin__fav { opacity: 1; } }
-@media (hover: hover) { .pin__fav:hover { background: var(--red); transform: scale(1.08); } }
+.pin__fav.is-on svg { fill: currentColor; transform: scale(1.06); }
+.pin__fav:focus-visible { opacity: 1; }
+@media (hover: hover) {
+  .pin:hover .pin__fav { opacity: 1; }
+  .pin__fav:hover { background: var(--red); transform: scale(1.08); }
+}
+.projects__hint {
+  margin-top: 10px; font-size: 13px; color: var(--muted-light);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.projects__hint::before {
+  content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--red-hover);
+}
 
 .fav-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 22px; }
 .fav-count { font-size: 14px; color: var(--muted-light); font-variant-numeric: tabular-nums; }

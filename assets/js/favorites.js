@@ -46,14 +46,14 @@ export function onFavoritesChange(fn) {
   return () => listeners.delete(fn);
 }
 
-const PIN_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.6c-3 0-5.4 2.4-5.4 5.4 0 3.8 5.4 10 5.4 10s5.4-6.2 5.4-10c0-3-2.4-5.4-5.4-5.4Z"/><circle cx="12" cy="9" r="1.9"/></svg>';
+const PIN_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>';
 
 function paint(btn, index) {
   const on = isFavorite(index);
   btn.classList.toggle('is-on', on);
   btn.setAttribute('aria-pressed', String(on));
-  btn.setAttribute('aria-label', on ? 'Bỏ ghim dự án' : 'Ghim dự án vào thư viện yêu thích');
-  btn.title = on ? 'Bỏ ghim' : 'Ghim vào thư viện yêu thích';
+  btn.setAttribute('aria-label', on ? 'Bỏ yêu thích dự án' : 'Thêm dự án vào thư viện yêu thích');
+  btn.title = on ? 'Bỏ yêu thích' : 'Thêm vào thư viện yêu thích';
 }
 
 function announce(on) {
@@ -66,8 +66,8 @@ function announce(on) {
     document.body.appendChild(el);
   }
   el.textContent = on
-    ? 'Đã ghim vào thư viện yêu thích.'
-    : 'Đã bỏ ghim khỏi thư viện yêu thích.';
+    ? 'Đã thêm vào thư viện yêu thích.'
+    : 'Đã bỏ khỏi thư viện yêu thích.';
 }
 
 // Wraps each .pin so the favourite button can sit next to it (a button
@@ -115,7 +115,7 @@ function cardMarkup(item, index) {
         <img src="${item.img}" width="${item.w}" height="${item.h}" loading="lazy" decoding="async" alt="${title}">
         <span class="pin__info">${title}<small>${cat}${item.domain ? ` · ${item.domain}` : ''}</small></span>
       </a>
-      <button class="fav-card__remove" type="button" data-fav-remove="${index}" aria-label="Bỏ ghim ${title}">
+      <button class="fav-card__remove" type="button" data-fav-remove="${index}" aria-label="Bỏ yêu thích ${title}">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
     </div>`;
