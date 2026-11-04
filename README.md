@@ -13,6 +13,7 @@ Site HTML/CSS/JS tĩnh, không cần Node, không cần build. Chỉ cần đưa
 | Casa xin chào | `gioi-thieu/index.html` → `/gioi-thieu/` |
 | Dịch vụ + form liên hệ | `dich-vu/index.html` → `/dich-vu/` |
 | Sản phẩm | `san-pham/index.html` → `/san-pham/` (neo: `#phu-dieu`, `#op-tuong`, `#lam-hoa-gio`, `#do-decor`, `#ran-san-ho`) |
+| Chi tiết sản phẩm — 5 trang | `san-pham/{lam-che-nang,gach-op-chuyen-mau,gach-phu-dieu,artwork-decor,ran-san-ho}/index.html` |
 | Thư viện yêu thích (dự án đã ghim) | `thu-vien-yeu-thich/index.html` → `/thu-vien-yeu-thich/` |
 | Tài khoản | `tai-khoan/index.html` → `/tai-khoan/` (dashboard: thông tin + thư viện đã ghim) |
 
