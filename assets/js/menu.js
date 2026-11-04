@@ -15,7 +15,7 @@ export function initMenu(page) {
   let tl = null;
 
   // Mark the current page in the menu.
-  const current = { home: 'home', products: 'products', process: 'process', about: 'about', services: 'services', account: 'account' }[page];
+  const current = { home: 'home', products: 'products', process: 'process', 'process-step': 'process', about: 'about', services: 'services', account: 'account', detail: 'solutions', favorites: 'favorites' }[page];
   document.querySelectorAll('[data-nav]').forEach((a) => { if (a.dataset.nav === current) a.setAttribute('aria-current', 'page'); });
 
   const open = () => {
