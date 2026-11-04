@@ -185,7 +185,9 @@ html.menu-open .site-header::before { opacity: 0; }
   font-family: var(--font-display);
   font-size: clamp(30px, 3.8vw, 52px); font-weight: 600; line-height: 1.15; letter-spacing: .01em;
   color: rgba(255, 255, 255, .9);
-  transition: color .3s, transform .45s var(--ease-out);
+  /* Only colour transitions here: a transform transition would fight the
+     GSAP open animation and make the links flash at their final position. */
+  transition: color .3s;
 }
 .menu__nav a[aria-current="page"] { color: var(--red-hover); }
 @media (hover: hover) { .menu__nav a:hover { color: var(--red-hover); transform: translateX(10px); } }
