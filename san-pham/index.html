@@ -40,9 +40,11 @@
         <a class="icon-btn" href="/tai-khoan/" aria-label="Tài khoản" data-nav="account">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </a>
-        <span class="lang" role="img" aria-label="Ngôn ngữ: Tiếng Việt" title="Tiếng Việt">
-          <img src="/assets/figma/flag-vn.svg" width="32" height="32" alt="">
-        </span>
+        <div class="lang-switch" role="group" aria-label="Ngôn ngữ / Language">
+          <button type="button" data-lang-btn="vi" aria-pressed="true" lang="vi">VI</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-lang-btn="en" aria-pressed="false" lang="en">EN</button>
+        </div>
       </div>
     </div>
   </header>
@@ -57,6 +59,7 @@
           <li><a href="/san-pham/" data-nav="products">Sản phẩm</a></li>
           <li><a href="/tien-trinh/" data-nav="process">Sơ đồ tiến trình</a></li>
           <li><a href="/#du-an" data-nav="projects">Dự án tiêu biểu</a></li>
+          <li><a href="/thu-vien-yeu-thich/" data-nav="favorites">Thư viện yêu thích</a></li>
           <li><a href="/dich-vu/" data-nav="services">Dịch vụ thiết kế và sản xuất</a></li>
           <li><a href="/gioi-thieu/" data-nav="about">Casa xin chào</a></li>
         </ul>
@@ -105,7 +108,7 @@
     </div>
 
     <section class="page-hero page-hero--image" aria-labelledby="page-title">
-      <img class="page-hero__bg" src="/assets/img/solution-5.webp" width="1920" height="1083" alt="">
+      <img class="page-hero__bg" src="/assets/img/p-gach-phu-dieu.webp" width="1920" height="1072" alt="">
       <div class="container page-hero__inner">
         <h1 class="page-title" id="page-title">Sản Phẩm</h1>
         <p class="page-hero__lead">Phù Điêu · Ốp Tường · Lam hoa gió · Đồ decor · Rạn san hô</p>
@@ -117,7 +120,7 @@
       <div class="solutions__stage" data-stage>
         <article class="slide" id="phu-dieu" data-slide aria-label="1 / 5: Phù điêu">
           <div class="slide__media" style="--pos: 68% center">
-            <img src="/assets/img/solution-5.webp" srcset="/assets/img/solution-5-sm.webp 960w, /assets/img/solution-5.webp 1920w" sizes="100vw" width="1920" height="1083" loading="lazy" alt="Tranh phù điêu gốm trên tường phòng khách">
+            <img src="/assets/img/p-gach-phu-dieu.webp" srcset="/assets/img/p-gach-phu-dieu-sm.webp 960w, /assets/img/p-gach-phu-dieu.webp 1920w" sizes="100vw" width="1920" height="1072" loading="lazy" alt="Tranh phù điêu gốm trên tường phòng khách">
             <div class="slide__shade"></div>
             <div class="slide__dim"></div>
           </div>
@@ -139,14 +142,14 @@
 
         <article class="slide" id="op-tuong" data-slide aria-label="2 / 5: Ốp tường">
           <div class="slide__media" style="--pos: 58% center">
-            <img src="/assets/img/solution-1.webp" srcset="/assets/img/solution-1-sm.webp 960w, /assets/img/solution-1.webp 1920w" sizes="100vw" width="1920" height="1081" loading="lazy" alt="Gạch nung ốp tường trong phòng khách hiện đại">
+            <img src="/assets/img/p-gach-op-chuyen-mau.webp" srcset="/assets/img/p-gach-op-chuyen-mau-sm.webp 960w, /assets/img/p-gach-op-chuyen-mau.webp 1920w" sizes="100vw" width="1920" height="1072" loading="lazy" alt="Gạch ốp chuyển màu trong phòng khách hiện đại">
             <div class="slide__shade"></div>
             <div class="slide__dim"></div>
           </div>
           <div class="slide__body">
             <div class="slide__info">
               <p class="slide__eyebrow"><span>Ốp tường</span></p>
-              <h2 class="slide__name"><span class="slide__name-main">Ốp Tường</span> <span class="slide__name-sub">Vietnamese Terracotta Bricks</span></h2>
+              <h2 class="slide__name"><span class="slide__name-main">Gạch Ốp</span> <span class="slide__name-sub">Chuyển Màu</span></h2>
               <p class="slide__tagline">Vẻ đẹp truyền thống<br>trong không gian hiện đại</p>
               <ul class="slide__feats">
                 <li><svg width="26" height="26" aria-hidden="true"><use href="#i-leaf"/></svg><span>Tự nhiên<br>bền vững</span></li>
@@ -160,14 +163,14 @@
 
         <article class="slide" id="lam-hoa-gio" data-slide aria-label="3 / 5: Lam hoa gió">
           <div class="slide__media" style="--pos: 70% center">
-            <img src="/assets/img/solution-3.webp" srcset="/assets/img/solution-3-sm.webp 960w, /assets/img/solution-3.webp 1920w" sizes="100vw" width="1920" height="1081" loading="lazy" alt="Lam hoa gió bằng gốm trong không gian sống">
+            <img src="/assets/img/p-lam-che-nang.webp" srcset="/assets/img/p-lam-che-nang-sm.webp 960w, /assets/img/p-lam-che-nang.webp 1920w" sizes="100vw" width="1920" height="1920" loading="lazy" alt="Lam che nắng bằng gốm trong không gian sống">
             <div class="slide__shade"></div>
             <div class="slide__dim"></div>
           </div>
           <div class="slide__body">
             <div class="slide__info">
               <p class="slide__eyebrow"><span>Lam hoa gió</span></p>
-              <h2 class="slide__name"><span class="slide__name-main">Lam Hoa Gió</span> <span class="slide__name-sub">Hơi Thở Từ Thiên Nhiên</span></h2>
+              <h2 class="slide__name"><span class="slide__name-main">Lam Che Nắng</span> <span class="slide__name-sub">Gốm 3D</span></h2>
               <p class="slide__tagline">Giải pháp kiến trúc độc đáo<br>cho không gian sống hiện đại</p>
               <ul class="slide__feats">
                 <li><svg width="26" height="26" aria-hidden="true"><use href="#i-wind"/></svg><span>Thông gió<br>tự nhiên</span></li>
@@ -182,14 +185,14 @@
 
         <article class="slide" id="do-decor" data-slide aria-label="4 / 5: Đồ decor">
           <div class="slide__media" style="--pos: 32% center">
-            <img src="/assets/img/solution-4.webp" srcset="/assets/img/solution-4-sm.webp 960w, /assets/img/solution-4.webp 1920w" sizes="100vw" width="1920" height="1081" loading="lazy" alt="Gốm sứ trang trí trong không gian sống">
+            <img src="/assets/img/p-artwork-decor.webp" srcset="/assets/img/p-artwork-decor-sm.webp 960w, /assets/img/p-artwork-decor.webp 1920w" sizes="100vw" width="1920" height="1289" loading="lazy" alt="Artwork và đồ decor gốm trong không gian sống">
             <div class="slide__shade"></div>
             <div class="slide__dim"></div>
           </div>
           <div class="slide__body">
             <div class="slide__info">
               <p class="slide__eyebrow"><span>Đồ decor</span></p>
-              <h2 class="slide__name"><span class="slide__name-main">Đồ Decor</span> <span class="slide__name-sub">Gốm Sứ Trong Không Gian Sống</span></h2>
+              <h2 class="slide__name"><span class="slide__name-main">Artwork</span> <span class="slide__name-sub">&amp; Đồ Decor Gốm</span></h2>
               <p class="slide__tagline">Giá trị truyền thống<br>trong phong cách hiện đại</p>
               <ul class="slide__feats">
                 <li><svg width="26" height="26" aria-hidden="true"><use href="#i-hand"/></svg><span>Thủ công<br>tinh xảo</span></li>
@@ -204,7 +207,7 @@
 
         <article class="slide" id="ran-san-ho" data-slide aria-label="5 / 5: Rạn san hô">
           <div class="slide__media" style="--pos: 55% center">
-            <img src="/assets/img/solution-6.webp" srcset="/assets/img/solution-6-sm.webp 960w, /assets/img/solution-6.webp 1920w" sizes="100vw" width="1920" height="1072" loading="lazy" alt="Kết cấu gốm in 3D lấy cảm hứng từ rạn san hô">
+            <img src="/assets/img/p-ran-san-ho.webp" srcset="/assets/img/p-ran-san-ho-sm.webp 960w, /assets/img/p-ran-san-ho.webp 1920w" sizes="100vw" width="1920" height="1072" loading="lazy" alt="Kết cấu gốm in 3D lấy cảm hứng từ rạn san hô">
             <div class="slide__shade"></div>
             <div class="slide__dim"></div>
           </div>
@@ -264,6 +267,7 @@
           <li><a href="/san-pham/">Sản phẩm</a></li>
           <li><a href="/tien-trinh/">Sơ đồ tiến trình</a></li>
           <li><a href="/#du-an">Dự án tiêu biểu</a></li>
+          <li><a href="/thu-vien-yeu-thich/">Thư viện yêu thích</a></li>
           <li><a href="/dich-vu/">Dịch vụ</a></li>
           <li><a href="/gioi-thieu/">Casa xin chào</a></li>
         </ul>

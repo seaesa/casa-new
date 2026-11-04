@@ -2,6 +2,9 @@ import { initHeader } from './header.js';
 import { initMenu } from './menu.js';
 import { initSearch } from './search.js';
 import { initReveal } from './reveal.js';
+import { initLang } from './lang.js';
+import { initPinFavorites, initFavoritesPage, initFavoritesPreview } from './favorites.js';
+import { initAuth } from './auth.js';
 
 gsap.registerPlugin(ScrollTrigger);
 // Mobile browsers resize the viewport when the address bar shows/hides; don't re-measure pins for that.
@@ -13,6 +16,7 @@ initHeader();
 initMenu(page);
 initSearch();
 initReveal();
+initLang();
 
 document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
 
@@ -44,11 +48,20 @@ document.addEventListener('click', (e) => {
 if (page === 'home') {
   import('./home.js').then((m) => m.initHome());
   import('./projects.js').then((m) => m.initProjects());
+  initPinFavorites();
 }
 if (page === 'process') import('./process-page.js').then((m) => m.initProcessPage());
 if (page === 'products') import('./products.js').then((m) => m.initProducts());
 if (page === 'services') import('./contact-form.js').then((m) => m.initContactForm());
-if (page === 'account') import('./account.js').then((m) => m.initAccount());
+if (page === 'account') {
+  initAuth();
+  initFavoritesPreview();
+}
+if (page === 'favorites') {
+  initFavoritesPage();
+  initPinFavorites();
+}
+if (page === 'detail') import('./detail-page.js').then((m) => m.initDetailPage());
 
 // Images that load late can change page height; keep pinned sections measured correctly.
 window.addEventListener('load', () => ScrollTrigger.refresh());

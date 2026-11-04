@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#141414">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montaga&family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+  <title>Giải pháp công nghệ in 3D chế tác gốm thực tế | Casa+</title>
+  <meta name="description" content="Quy trình khép kín của Casa+: nghiên cứu vật liệu, thiết kế tham số, in 3D và nung 1200°C để tạo ra gốm kiến trúc cho mặt dựng, nội thất và cảnh quan.">
+  <script type="module" src="/assets/js/main.js"></script>
+</head>
+<body data-page="detail" id="top">
+  <a class="skip-link" href="#main">Bỏ qua, đến nội dung chính</a>
+
+  <header class="site-header" data-header>
+    <div class="site-header__bar">
+      <div class="site-header__side">
+        <button class="icon-btn burger" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+        <button class="icon-btn" type="button" aria-label="Tìm kiếm" aria-expanded="false" aria-controls="site-search" data-search-toggle>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.75" stroke="currentColor" stroke-width="2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+
+      <a class="site-header__logo" href="/" aria-label="Casa+ – Trang chủ">
+        <img class="logo-light" src="/assets/logo/casa-white.png" width="765" height="337" alt="">
+      </a>
+
+      <div class="site-header__side site-header__side--end">
+        <a class="icon-btn" href="/tai-khoan/" aria-label="Tài khoản" data-nav="account">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </a>
+        <div class="lang-switch" role="group" aria-label="Ngôn ngữ / Language">
+          <button type="button" data-lang-btn="vi" aria-pressed="true" lang="vi">VI</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-lang-btn="en" aria-pressed="false" lang="en">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu" id="site-menu" role="dialog" aria-modal="true" aria-label="Menu chính" hidden data-menu>
+    <div class="menu__bg" data-menu-bg></div>
+    <div class="menu__inner container-wide">
+      <nav class="menu__nav" aria-label="Điều hướng chính">
+        <ul>
+          <li><a href="/" data-nav="home">Trang chủ</a></li>
+          <li><a href="/#giai-phap" data-nav="solutions">Giải pháp in 3D gốm</a></li>
+          <li><a href="/san-pham/" data-nav="products">Sản phẩm</a></li>
+          <li><a href="/tien-trinh/" data-nav="process">Sơ đồ tiến trình</a></li>
+          <li><a href="/#du-an" data-nav="projects">Dự án tiêu biểu</a></li>
+          <li><a href="/thu-vien-yeu-thich/" data-nav="favorites">Thư viện yêu thích</a></li>
+          <li><a href="/dich-vu/" data-nav="services">Dịch vụ thiết kế và sản xuất</a></li>
+          <li><a href="/gioi-thieu/" data-nav="about">Casa xin chào</a></li>
+        </ul>
+      </nav>
+      <aside class="menu__aside">
+        <p class="menu__label">Liên hệ</p>
+        <p><a href="tel:0763161286">0763 161 286</a></p>
+        <p><a href="mailto:dongxuong@casa-evolution.com">dongxuong@casa-evolution.com</a></p>
+        <p class="menu__muted">76/50B Phan Tây Hồ, Phường Cầu Kiệu, TP Hồ Chí Minh</p>
+        <p class="menu__muted">Mở cửa 9:00 – 18:30</p>
+        <ul class="social">
+          <li><a href="https://www.facebook.com/Dongxuongpoweredbycasa" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.youtube.com/@Dongxuongpoweredbycasa" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.pinterest.com/Dongxuongcasa/case-study-in3d-g%E1%BB%91m/" target="_blank" rel="noopener">Pinterest</a></li>
+          <li><a href="https://zalo.me/0763161286" target="_blank" rel="noopener">Zalo</a></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+  <div class="search" id="site-search" role="dialog" aria-modal="true" aria-label="Tìm kiếm" hidden data-search>
+    <div class="search__backdrop" data-search-close></div>
+    <div class="search__panel">
+      <div class="container">
+        <form class="search__form" role="search" data-search-form>
+          <label class="visually-hidden" for="search-input">Tìm trong trang</label>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.75" stroke="currentColor" stroke-width="2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <input id="search-input" type="search" placeholder="Tìm giải pháp, tiến trình, dịch vụ…" autocomplete="off" data-search-input>
+          <button class="icon-btn" type="button" aria-label="Đóng tìm kiếm" data-search-close>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+        </form>
+        <ul class="search__results" data-search-results aria-live="polite"></ul>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="detail-hero" aria-labelledby="page-title">
+      <img class="detail-hero__bg" src="/assets/img/p-gach-phu-dieu.webp" width="1920" height="1072" alt="">
+      <div class="container detail-hero__inner">
+        <p class="detail-hero__eyebrow">Giải pháp công nghệ Casa⁺</p>
+        <h1 class="detail-hero__title" id="page-title">Giải Pháp Công Nghệ In 3D Chế Tác Gốm Thực Tế</h1>
+        <p class="detail-hero__lead">Từ hồn đất nung Việt đến mặt dựng công trình — quy trình khép kín từ nghiên cứu vật liệu, thiết kế tham số đến in 3D và nung 1200°C.</p>
+      </div>
+    </section>
+
+    <nav class="detail-nav" aria-label="Mục lục" data-detail-nav>
+      <div class="container">
+        <ol class="detail-nav__list">
+          <li><a href="#cau-chuyen">Câu chuyện</a></li>
+          <li><a href="#he-sinh-thai">Hệ sinh thái</a></li>
+          <li><a href="#lam-che-nang">Lam che nắng</a></li>
+          <li><a href="#gach-op-chuyen-mau">Gạch ốp chuyển màu</a></li>
+          <li><a href="#gach-phu-dieu">Gạch phù điêu</a></li>
+          <li><a href="#artwork-decor">Artwork &amp; Decor</a></li>
+          <li><a href="#ran-san-ho">Rạn san hô</a></li>
+          <li><a href="#nghien-cuu">Nghiên cứu &amp; thiết kế</a></li>
+          <li><a href="#san-xuat">Sản xuất &amp; lắp đặt</a></li>
+          <li><a href="#ket-luan">Kết luận</a></li>
+        </ol>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <section class="detail-section" id="cau-chuyen" data-detail-section>
+        <div class="detail-section__head" data-reveal>
+          <p class="detail-section__no">01 — CÂU CHUYỆN</p>
+          <h2 class="detail-section__title">Xuất phát từ hồn đất nung Việt</h2>
+          <p class="detail-section__lead">Casa⁺ được thành lập ngày 20.08.2021 bởi KTS. Hoàng Thiện, với mong muốn đưa gốm Việt trở lại đời sống kiến trúc bằng ngôn ngữ của công nghệ.</p>
+        </div>
+        <div class="detail-cols">
+          <div class="detail-media" data-reveal>
+            <img src="/assets/img/p-artwork-decor.webp" width="1920" height="1289" loading="lazy" alt="Không gian nội thất với gốm in 3D của Casa+">
+          </div>
+          <div class="detail-copy" data-reveal style="--i:1">
+            <p>Chúng tôi bắt đầu từ những viên gạch nung thủ công của làng gốm truyền thống, nơi mỗi vết men loang là một dấu vết của thời gian. Nhưng làng nghề đang đối diện với một giới hạn: khuôn đút, số lượng tối thiểu và thời gian chờ đợi khiến những ý tưởng kiến trúc phức tạp khó có thể thành hiện thực.</p>
+            <p>Casa⁺ chọn một con đường khác. Chúng tôi giữ nguyên vật liệu đất nung, giữ nguyên nhiệt độ nung 1200°C, nhưng thay thế khuôn đút bằng <strong>in 3D robot 6 trục</strong> và thay thế bản vẽ tay bằng <strong>thiết kế tham số</strong>. Kết quả là những mẫu gốm độc bản, sản xuất được ở số lượng nhỏ, với biên dạng tự do mà phương pháp truyền thống không thể làm được.</p>
+            <p>Đông xưởng — trung tâm nghiên cứu và phát triển của Casa⁺ — là nơi những thử nghiệm vật liệu, men và kết cấu được thực hiện trước khi bước vào sản xuất thực tế.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section" id="he-sinh-thai" data-detail-section>
+        <div class="detail-section__head" data-reveal>
+          <p class="detail-section__no">02 — HỆ SINH THÁI</p>
+          <h2 class="detail-section__title">05 nhóm sản phẩm gốm in 3D chủ đạo</h2>
+          <p class="detail-section__lead">Một nền tảng công nghệ, năm hướng ứng dụng — từ kiểm soát nắng cho mặt dựng đến tái tạo hệ sinh thái dưới nước.</p>
+        </div>
+        <ul class="eco-grid">
+          <li class="eco-card" data-reveal style="--i:0"><span class="eco-card__no">01</span><span class="eco-card__title">Lam che nắng gốm 3D</span><p>Cấu trúc lam hữu cơ giảm nhiệt mặt tiền, tạo bóng đổ và nhịp điệu cho công trình.</p></li>
+          <li class="eco-card" data-reveal style="--i:1"><span class="eco-card__no">02</span><span class="eco-card__title">Gạch ốp chuyển màu</span><p>Men chảy ở 1200°C tạo dải màu chuyển tiếp theo ánh sáng và góc nhìn.</p></li>
+          <li class="eco-card" data-reveal style="--i:2"><span class="eco-card__no">03</span><span class="eco-card__title">Gạch phù điêu</span><p>Biên dạng nổi in trực tiếp, không cần khuôn, chiều sâu tùy biến theo thiết kế.</p></li>
+          <li class="eco-card" data-reveal style="--i:3"><span class="eco-card__no">04</span><span class="eco-card__title">Artwork &amp; đồ decor</span><p>Điêu khắc nội thất và cảnh quan, mỗi tác phẩm là một bản thể duy nhất.</p></li>
+          <li class="eco-card" data-reveal style="--i:4"><span class="eco-card__no">05</span><span class="eco-card__title">Rạn san hô in 3D</span><p>Giá thể đất nung xốp với kết cấu hữu cơ, tạo môi trường cho sinh vật biển bám vào.</p></li>
+        </ul>
+      </section>
+
+      <section class="detail-section" id="lam-che-nang" data-detail-section>
+        <div class="detail-section__head" data-reveal>
+          <p class="detail-section__no">03 — SẢN PHẨM</p>
+          <h2 class="detail-section__title">Lam che nắng gốm in 3D</h2>
+          <p class="detail-section__lead">Giải nhiệt mặt tiền nắng bằng một cấu trúc biết thở.</p>
+        </div>
+        <div class="detail-cols detail-cols--media">
+          <div class="detail-media" data-reveal>
+            <img src="/assets/img/p-lam-che-nang.webp" width="1920" height="1920" loading="lazy" alt="Lam che nắng gốm in 3D trên mặt tiền">
+          </div>
+          <div class="detail-copy" data-reveal style="--i:1">
+            <p>Lam che nắng của Casa⁺ không phải một tấm chắn đặc. Mỗi thanh lam là một lát cắt của thuật toán mô phỏng hướng nắng, được in 3D với tiết diện thay đổi dọc theo chiều dài. Nhờ vậy, cùng một hệ lam có thể vừa che nắng vừa mở tầm nhìn, vừa dẫn gió qua khe hở.</p>
+            <p>Vật liệu đất nung nung 1200°C giữ được độ bền màu và không bị ăn mòn trong khí hậu nhiệt đới. Khung đỡ bằng Inox 304 được tính toán để giữ các thanh lam ổn định trước tải trọng gió.</p>
+            <ul class="detail-list">
+              <li>Tiết diện lam tùy biến theo từng vị trí mặt dựng.</li>
+              <li>Khe hở và mật độ lam điều chỉnh theo hướng nắng.</li>
+              <li>Bề mặt men hoặc mộc, phù hợp cả nội thất và ngoại thất.</li>
+              <li>Lắp ghép module, rút ngắn thời gian thi công.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section" id="gach-op-chuyen-mau" data-detail-section>
+        <div class="detail-section__head" data-reveal>
+          <p class="detail-section__no">04 — SẢN PHẨM</p>
+          <h2 class="detail-section__title">Gạch men chuyển màu</h2>
+          <p class="detail-section__lead">Vũ điệu men chảy ở 1200°C trên đường nét thuật toán.</p>
+        </div>
+        <div class="detail-cols">
+          <div class="detail-copy" data-reveal>
+            <p>Mỗi viên gạch là một lần men chảy khác nhau. Casa⁺ kiểm soát độ dày men, tốc độ nung và vị trí đặt trong lò để tạo ra dải màu chuyển tiếp mềm mại — từ hổ phách sang nâu đất, từ xanh rêu sang xám tro.</p>
+            <p>Bề mặt gạch được thiết kế tham số để khi ghép thành mảng lớn, các viên không lặp lại một cách máy móc. Đây là điều khuôn đút truyền thống không thể làm được ở số lượng nhỏ.</p>
+            <p>Ứng dụng: ốp tường nội thất, vách tiền sảnh, quầy bar, mặt bếp và các mảng điểm nhấn kiến trúc.</p>
+          </div>
+          <div class="detail-media" data-reveal style="--i:1">
+            <img src="/assets/img/p-gach-op-chuyen-mau.webp" width="1920" height="1072" loading="lazy" alt="Gạch men chuyển màu ốp tường">
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section" id="gach-phu-dieu" data-detail-section>
+        <div class="detail-section__head" data-reveal>
+          <p class="detail-section__no">05 — SẢN PHẨM</p>
+          <h2 class="detail-section__title">Gạch phù điêu</h2>
+          <p class="detail-section__lead">Kiến tạo chiều sâu bóng đổ mà không tốn khuôn đút mẫu.</p>
+        </div>
+        <div class="detail-cols detail-cols--media">
+          <div class="detail-media" data-reveal>
+            <img src="/assets/img/p-gach-phu-dieu.webp" width="1920" height="1072" loading="lazy" alt="Gạch phù điêu in 3D trên tường gốm">
+          </div>
+          <div class="detail-copy" data-reveal style="--i:1">
+            <p>Phù điêu là nơi ánh sáng trở thành vật liệu. Bằng cách điều khiển biên dạng nổi của từng viên gạch, Casa⁺ tạo ra những mảng tường thay đổi theo giờ trong ngày: buổi sáng là những đường nét mảnh, buổi chiều là những khối bóng đậm.</p>
+            <p>Vì không dùng khuôn, mỗi thiết kế có thể được chỉnh sửa đến từng milimet mà không phát sinh chi phí làm khuôn mới. Đây là lợi thế quyết định với các công trình cần mẫu độc bản hoặc số lượng nhỏ.</p>
+            <ul class="detail-list">
+              <li>Biên dạng nổi từ 5mm đến 60mm.</li>
+              <li>Kết hợp mộc và men trong cùng một mảng tường.</li>
+              <li>Module hóa để lắp đặt nhanh, sai số thấp.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section" id="artwork-decor" data-detail-section>
+        <div class="detail-section__head" data-reveal>
+          <p class="detail-section__no">06 — SẢN PHẨM</p>
+          <h2 class="detail-section__title">Artwork &amp; đồ decor gốm</h2>
+          <p class="detail-section__lead">Điêu khắc nội thất, cảnh quan và ánh sáng độc bản.</p>
+        </div>
+        <div class="detail-cols">
+          <div class="detail-copy" data-reveal>
+            <p>Ngoài vật liệu ốp, gốm in 3D còn là một ngôn ngữ điêu khắc. Casa⁺ nhận đặt hàng tác phẩm cho sảnh khách sạn, nhà hàng, showroom và không gian cảnh quan — nơi mỗi tác phẩm cần một bản thể riêng.</p>
+            <p>Chúng tôi làm việc từ phác thảo ý tưởng, dựng mô hình 3D, in mẫu tỷ lệ 1:1, thử men và nung thử trước khi sản xuất bản chính thức.</p>
+          </div>
+          <div class="detail-media" data-reveal style="--i:1">
+            <img src="/assets/img/p-artwork-decor.webp" width="1920" height="1289" loading="lazy" alt="Tác phẩm gốm và đồ decor nội thất">
+          </div>
+        </div>
+        <blockquote class="detail-quote">“Mỗi tác phẩm rời lò là một bản thể không lặp lại — kể cả khi cùng một file thiết kế.”</blockquote>
+      </section>
+
+      <section class="detail-section" id="ran-san-ho" data-detail-section>
+        <div class="detail-section__head" data-reveal>
+          <p class="detail-section__no">07 — SẢN PHẨM</p>
+          <h2 class="detail-section__title">Rạn san hô in 3D</h2>
+          <p class="detail-section__lead">Giá thể đất nung xốp, tái tạo hệ sinh thái.</p>
+        </div>
+        <div class="detail-cols detail-cols--media">
+          <div class="detail-media" data-reveal>
+            <img src="/assets/img/p-ran-san-ho.webp" width="1920" height="1072" loading="lazy" alt="Rạn san hô in 3D bằng đất nung">
+          </div>
+          <div class="detail-copy" data-reveal style="--i:1">
+            <p>Rạn san hô nhân tạo của Casa⁺ được in từ đất nung với kết cấu xốp, tạo bề mặt bám cho san hô và sinh vật biển. Hình học hữu cơ của giá thể được tính toán để tăng diện tích bề mặt và giảm tác động dòng chảy.</p>
+            <p>Vật liệu gốm trơ, không thải độc tố vào nước biển và có tuổi thọ cao. Đây là hướng nghiên cứu Casa⁺ phát triển cùng các đơn vị bảo tồn biển.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section" id="nghien-cuu" data-detail-section>
+        <div class="detail-section__head" data-reveal>
+          <p class="detail-section__no">08 — NGHIÊN CỨU &amp; THIẾT KẾ</p>
+          <h2 class="detail-section__title">Ba luận điểm của Casa⁺</h2>
+        </div>
+
+        <div class="detail-cols">
+          <div class="detail-copy" data-reveal>
+            <p class="detail-section__no">01.</p>
+            <h3 class="detail-section__title" style="font-size:clamp(22px,2vw,30px)">Xuất phát điểm từ bản sắc văn hóa: hồn đất nung Việt &amp; trí tuệ vi khí hậu bản địa</h3>
+            <p>Gốm Việt không chỉ là vật liệu. Đó là cách người Việt ứng xử với nắng, gió và mưa: những hàng gạch thông gió, những mảng lam gốm, những bức tường dày giữ mát. Casa⁺ kế thừa trí tuệ đó và diễn giải lại bằng hình học tham số.</p>
+          </div>
+          <div class="detail-copy" data-reveal style="--i:1">
+            <p class="detail-section__no">02.</p>
+            <h3 class="detail-section__title" style="font-size:clamp(22px,2vw,30px)">Chuyển dịch di sản bằng công nghệ số: quy trình thiết kế tham số &amp; chế tác gốm in 3D khép kín</h3>
+            <p>Từ Grasshopper đến robot LDM 6 trục, mọi bước đều nằm trong một chuỗi dữ liệu liên tục. Thay đổi một tham số ở bản vẽ sẽ thay đổi trực tiếp đường in, không cần dựng lại khuôn hay mẫu thử.</p>
+          </div>
+        </div>
+
+        <div class="detail-copy" data-reveal style="margin-top:clamp(24px,3vw,40px);max-width:78ch">
+          <p class="detail-section__no">03.</p>
+          <h3 class="detail-section__title" style="font-size:clamp(22px,2vw,30px)">Gốm in 3D Casa⁺ (1200°C) so với các giải pháp vật liệu hiện hành</h3>
+          <p>So sánh trên sáu tiêu chí: độ bền thời tiết, khả năng tạo hình tự do, chi phí làm khuôn, thời gian sản xuất mẫu, tính thẩm mỹ bề mặt và tác động môi trường.</p>
+        </div>
+
+        <div class="table-scroll" data-reveal>
+          <table class="compare">
+            <caption class="visually-hidden">So sánh gốm in 3D Casa+ với GRC/GFRC, FRP/GFRP, lam nhôm CNC/WPC và gốm đúc khuôn</caption>
+            <thead>
+              <tr><th scope="col">Tiêu chí</th><th scope="col">Gốm in 3D Casa⁺</th><th scope="col">GRC / GFRC</th><th scope="col">FRP / GFRP</th><th scope="col">Lam nhôm CNC / WPC</th><th scope="col">Gốm đúc khuôn</th></tr>
+            </thead>
+            <tbody>
+              <tr class="is-own"><th scope="row">Bền thời tiết</th><td>Rất cao, nung 1200°C</td><td>Cao</td><td>Trung bình</td><td>Trung bình</td><td>Cao</td></tr>
+              <tr class="is-own"><th scope="row">Tạo hình tự do</th><td>Không giới hạn biên dạng</td><td>Hạn chế bởi khuôn</td><td>Hạn chế bởi khuôn</td><td>Chủ yếu thanh thẳng</td><td>Hạn chế bởi khuôn</td></tr>
+              <tr class="is-own"><th scope="row">Chi phí làm khuôn</th><td>Không có</td><td>Cao</td><td>Cao</td><td>Trung bình</td><td>Cao</td></tr>
+              <tr class="is-own"><th scope="row">Thời gian làm mẫu</th><td>Nhanh, in trực tiếp</td><td>Chậm</td><td>Chậm</td><td>Trung bình</td><td>Chậm</td></tr>
+              <tr class="is-own"><th scope="row">Bề mặt</th><td>Men gốm tự nhiên, độc bản</td><td>Xi măng</td><td>Nhựa composite</td><td>Kim loại / nhựa gỗ</td><td>Men gốm</td></tr>
+              <tr class="is-own"><th scope="row">Tác động môi trường</th><td>Đất nung, không nhựa</td><td>Xi măng, cốt sợi</td><td>Nhựa tổng hợp</td><td>Nhôm / nhựa</td><td>Đất nung</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="detail-section" id="san-xuat" data-detail-section>
+        <div class="detail-section__head" data-reveal>
+          <p class="detail-section__no">09 — SẢN XUẤT &amp; LẮP ĐẶT</p>
+          <h2 class="detail-section__title">Quy trình khép kín tại Đông xưởng</h2>
+          <p class="detail-section__lead">Nghiên cứu vật liệu → Thiết kế tham số → In 3D robot 6 trục → Sấy và nung 1200°C → Lắp đặt.</p>
+        </div>
+        <div class="tl-steps">
+          <div class="tl-step" data-reveal style="--i:0">
+            <span class="tl-step__no">01</span>
+            <div class="tl-step__body">
+              <h2>Nghiên cứu &amp; phát triển vật liệu</h2>
+              <p>Đất sét, chamotte và phụ gia được phối trộn để đạt độ dẻo, độ xốp và độ co ngót phù hợp với đầu in. Tính lưu biến (thixotropy) quyết định khả năng giữ hình của từng lớp in.</p>
+            </div>
+          </div>
+          <div class="tl-step" data-reveal style="--i:1">
+            <span class="tl-step__no">02</span>
+            <div class="tl-step__body">
+              <h2>Thiết kế số &amp; lập trình chế tạo</h2>
+              <p>Mô hình Grasshopper xuất ra đường chạy dao xoắn ốc cho robot LDM 6 trục. Mỗi tham số hình học đều gắn với một ràng buộc chế tạo thực tế.</p>
+            </div>
+          </div>
+          <div class="tl-step" data-reveal style="--i:2">
+            <span class="tl-step__no">03</span>
+            <div class="tl-step__body">
+              <h2>Quy trình gia công in 3D</h2>
+              <p>Đầu in đùn hỗn hợp đất theo từng lớp, robot di chuyển theo đường chạy dao đã lập trình. Tốc độ đùn, đường kính đầu in và nhiệt độ môi trường được kiểm soát liên tục.</p>
+            </div>
+          </div>
+          <div class="tl-step" data-reveal style="--i:3">
+            <span class="tl-step__no">04</span>
+            <div class="tl-step__body">
+              <h2>Xử lý sau in: sấy khô, nung 1200°C và lắp ghép</h2>
+              <p>Sấy chậm để tránh nứt, sau đó nung ở 1200°C để ổn định cấu trúc và màu men. Các module được kiểm tra kích thước trước khi đóng gói và chuyển đến công trình.</p>
+            </div>
+          </div>
+          <div class="tl-step" data-reveal style="--i:4">
+            <span class="tl-step__no">05</span>
+            <div class="tl-step__body">
+              <h2>Lắp đặt &amp; bàn giao</h2>
+              <p>Hệ khung Inox 304 và phụ kiện liên kết được tính toán theo tải trọng gió. Đội ngũ Casa⁺ phối hợp với nhà thầu để căn chỉnh mạch ghép và bàn giao đúng tiến độ.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section" id="ket-luan" data-detail-section>
+        <div class="detail-section__head" data-reveal>
+          <p class="detail-section__no">10 — KẾT LUẬN</p>
+          <h2 class="detail-section__title">Gốm không chỉ để nhìn, mà để sống cùng công trình</h2>
+        </div>
+        <div class="detail-copy" data-reveal style="max-width:78ch">
+          <p>Casa⁺ tin rằng vật liệu truyền thống không cần bị thay thế để trở nên hiện đại. Điều cần thay đổi là cách chúng ta thiết kế và chế tác. In 3D cho phép gốm Việt bước vào những hình dạng mới, những công trình mới, mà vẫn giữ được hồn cốt của đất nung.</p>
+          <p>Chúng tôi mời các kiến trúc sư, chủ đầu tư và nhà thiết kế cùng bắt đầu một cuộc trò chuyện — từ một viên gạch mẫu.</p>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:32px">
+          <a class="btn-glass" href="/dich-vu/">Liên hệ tư vấn</a>
+          <a class="btn-glass btn-glass--dark" href="/tien-trinh/">Xem sơ đồ tiến trình</a>
+        </div>
+      </section>
+
+    </div>
+
+    <section class="quote-banner" aria-label="Câu nói của Casa+">
+      <img src="/assets/img/quote-banner.webp" width="1865" height="623" loading="lazy" decoding="async"
+           alt="“The second home of Architecture and Design students” – Đông xưởng, Powered by Casa+">
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div class="site-footer__brand">
+        <a href="/" aria-label="Casa+ – Trang chủ"><img src="/assets/logo/casa-white.png" width="765" height="337" alt="Casa+" class="site-footer__logo" loading="lazy"></a>
+        <p>Công ty Cổ phần Dịch vụ và Giáo dục C.A.S</p>
+        <p class="muted">76/50B Phan Tây Hồ, Phường Cầu Kiệu, TP Hồ Chí Minh, Việt Nam</p>
+      </div>
+      <nav class="site-footer__col" aria-label="Khám phá">
+        <p class="site-footer__title">Khám phá</p>
+        <ul>
+          <li><a href="/#giai-phap">Giải pháp in 3D gốm</a></li>
+          <li><a href="/san-pham/">Sản phẩm</a></li>
+          <li><a href="/tien-trinh/">Sơ đồ tiến trình</a></li>
+          <li><a href="/#du-an">Dự án tiêu biểu</a></li>
+          <li><a href="/thu-vien-yeu-thich/">Thư viện yêu thích</a></li>
+          <li><a href="/dich-vu/">Dịch vụ</a></li>
+          <li><a href="/gioi-thieu/">Casa xin chào</a></li>
+        </ul>
+      </nav>
+      <div class="site-footer__col">
+        <p class="site-footer__title">Liên hệ</p>
+        <ul>
+          <li><a href="tel:0763161286">Hotline 0763 161 286</a></li>
+          <li><a href="mailto:dongxuong@casa-evolution.com">dongxuong@casa-evolution.com</a></li>
+          <li class="muted">Mở cửa 9:00 – 18:30</li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <p class="site-footer__title">Theo dõi</p>
+        <ul>
+          <li><a href="https://www.facebook.com/Dongxuongpoweredbycasa" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.youtube.com/@Dongxuongpoweredbycasa" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.pinterest.com/Dongxuongcasa/case-study-in3d-g%E1%BB%91m/" target="_blank" rel="noopener">Pinterest</a></li>
+          <li><a href="https://zalo.me/0763161286" target="_blank" rel="noopener">Zalo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container site-footer__bottom">
+      <p>© <span data-year>2026</span> C.A.S JSC. Bảo lưu mọi quyền.</p>
+      <a class="to-top" href="#top" data-to-top>Lên đầu trang</a>
+    </div>
+  </footer>
+</body>
+</html>

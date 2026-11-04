@@ -7,11 +7,14 @@ Site HTML/CSS/JS tĩnh, không cần Node, không cần build. Chỉ cần đưa
 | Trang | File |
 |---|---|
 | Trang chủ | `index.html` |
-| Sơ đồ tiến trình | `tien-trinh/index.html` → `/tien-trinh/` (neo: `#cau-chuyen`, `#nghien-cuu`, `#thiet-ke`, `#san-xuat`, `#lap-dat`, `#phu-dieu`, `#op-tuong`, `#lam-hoa-gio`, `#do-decor`, `#ran-san-ho`) |
+| Giải pháp công nghệ in 3D | `giai-phap/index.html` → `/giai-phap/` (neo: `#cau-chuyen`, `#he-sinh-thai`, `#lam-che-nang`, `#gach-op-chuyen-mau`, `#gach-phu-dieu`, `#artwork-decor`, `#ran-san-ho`, `#nghien-cuu`, `#san-xuat`, `#ket-luan`) |
+| Sơ đồ tiến trình (tổng quan) | `tien-trinh/index.html` → `/tien-trinh/` |
+| Tiến trình — 5 trang con | `tien-trinh/{cau-chuyen,nghien-cuu,thiet-ke,san-xuat,lap-dat}/index.html` |
 | Casa xin chào | `gioi-thieu/index.html` → `/gioi-thieu/` |
 | Dịch vụ + form liên hệ | `dich-vu/index.html` → `/dich-vu/` |
 | Sản phẩm | `san-pham/index.html` → `/san-pham/` (neo: `#phu-dieu`, `#op-tuong`, `#lam-hoa-gio`, `#do-decor`, `#ran-san-ho`) |
-| Tài khoản (đăng nhập / đăng ký) | `tai-khoan/index.html` → `/tai-khoan/` |
+| Thư viện yêu thích (dự án đã ghim) | `thu-vien-yeu-thich/index.html` → `/thu-vien-yeu-thich/` |
+| Tài khoản | `tai-khoan/index.html` → `/tai-khoan/` (dashboard: thông tin + thư viện đã ghim) |
 
 ```
 assets/
@@ -25,6 +28,8 @@ index.html              các trang con nằm trong thư mục riêng
 - Mỗi trang là một file HTML đầy đủ: header, menu, tìm kiếm và footer được chép trực tiếp vào từng trang (không dùng partial, không có bước build).
 - Thư viện ngoài lấy qua CDN: GSAP + ScrollTrigger 3.15.0 (jsDelivr), font Google Fonts.
 - `assets/js/projects-data.js` giữ tiêu đề/nguồn của 34 dự án cho lightbox; danh sách 34 thẻ dự án đã nằm sẵn trong `index.html`.
+- Ghim dự án: `assets/js/favorites.js` lưu vào `localStorage` (`casa:favorites:v1`), dùng chung cho nút ghim ở mục "Dự án tiêu biểu", trang Thư viện yêu thích và dashboard tài khoản. Không cần backend.
+- Đổi ngôn ngữ VI/EN: `assets/js/lang.js` đọc `data-i18n` trên từng phần tử, lưu lựa chọn ở `localStorage` (`casa:lang`). Muốn dịch thêm, gắn `data-i18n="key"` và bổ sung key vào từ điển `EN` trong file này.
 - Ảnh/video gốc từ Drive và Figma nằm trong `drive/` (không đưa lên hosting).
 
 ## Chạy thử
@@ -42,6 +47,6 @@ python3 -m http.server 8123
 
 - URL sạch dạng `/slug/`: mỗi trang là thư mục chứa `index.html`, host tĩnh tự phục vụ `/slug/`. Không dùng redirect `.html` và không cần cấu hình rewrite.
 - Form liên hệ: đặt URL nhận dữ liệu (Formspree, Google Apps Script…) vào `data-endpoint` trong `dich-vu/index.html`. Khi để trống, nút "Gửi thông tin" mở ứng dụng email với nội dung điền sẵn gửi tới dongxuong@casa-evolution.com.
-- Trang tài khoản chỉ kiểm tra dữ liệu phía trình duyệt và hiện thông báo hotline; chưa kết nối backend.
+- Trang tài khoản hiện là dashboard tĩnh (thông tin khách hàng + thư viện đã ghim); chưa kết nối backend đăng nhập.
 - Hero trang chủ tua video theo cuộn: 120 khung WebP trong `assets/hero/d` (ngang, 1280×720) và `assets/hero/m` (dọc, 432×720); logic ở `assets/js/forge.js`.
   Đổi video: cắt lại bằng `ffmpeg -i video.mp4 -vf "select='not(mod(n\,3))'" -fps_mode vfr -start_number 0 d/%03d.png` (chỉnh hệ số 3 để ra đúng 120 khung) rồi chuyển sang WebP bằng `cwebp -q 70`.
