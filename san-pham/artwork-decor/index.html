@@ -40,10 +40,12 @@
         <a class="icon-btn" href="/tai-khoan/" aria-label="Tài khoản" data-nav="account">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </a>
-        <div class="lang-switch" role="group" aria-label="Ngôn ngữ / Language">
-          <button type="button" data-lang-btn="vi" aria-pressed="true" lang="vi">VI</button>
-          <span aria-hidden="true">/</span>
-          <button type="button" data-lang-btn="en" aria-pressed="false" lang="en">EN</button>
+        <div class="lang-switch" data-lang-switch>
+          <button type="button" class="lang-switch__current" aria-haspopup="true" aria-expanded="false" aria-label="Ngôn ngữ / Language" data-lang-toggle><img src="/assets/figma/flag-vn.svg" width="32" height="32" alt="" data-lang-flag></button>
+          <ul class="lang-switch__list" role="group" aria-label="Ngôn ngữ / Language" hidden>
+            <li><button type="button" data-lang-btn="vi" aria-pressed="true" lang="vi" aria-label="Tiếng Việt"><img src="/assets/figma/flag-vn.svg" width="32" height="32" alt=""></button></li>
+            <li><button type="button" data-lang-btn="en" aria-pressed="false" lang="en" aria-label="English"><img src="/assets/figma/flag-en.svg" width="32" height="32" alt=""></button></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -98,22 +100,10 @@
   </div>
 
   <main id="main">
-    <div class="page-top container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <ol>
-          <li><a href="/">Trang Chủ</a></li>
-          <li><a href="/san-pham/">Sản Phẩm</a></li>
-          <li><span aria-current="page">Artwork &amp; đồ decor</span></li>
-        </ol>
-      </nav>
-    </div>
-
     <section class="pd-hero" aria-labelledby="page-title">
-      <img class="pd-hero__bg" src="/assets/img/p-artwork-decor.webp" width="2000" height="2000" alt="">
+      <img class="pd-hero__bg" src="/assets/img/pd-h4.webp" width="1920" height="468" alt="">
       <div class="container pd-hero__inner">
-        <p class="pd-hero__eyebrow">ARTWORK & DECOR — ĐIÊU KHẮC NỘI THẤT, CẢNH QUAN</p>
-        <h1 class="pd-hero__title" id="page-title">ARTWORT & DECOR</h1>
-        <p class="pd-hero__lead">Quy trình nghiên cứu ý tưởng, mô hình hóa, in 3D và hoàn thiện các tác phẩm gốm độc bản của Casa⁺.</p>
+        <h1 class="pd-hero__title" id="page-title">ARTWORK &amp; DECOR</h1>
       </div>
     </section>
 
@@ -122,83 +112,43 @@
         <div class="container pd-block__grid">
           <div class="pd-block__text">
             <span class="pd-block__no">01</span>
-            <h2>Nghiên cứu ý tưởng & ngôn ngữ nghệ thuật</h2>
-            <p>Mỗi tác phẩm bắt đầu từ một nghiên cứu về hình khối, ánh sáng và chất liệu — từ gốm cổ Việt đến điêu khắc hiện đại. Casa⁺ xác lập ngôn ngữ riêng: bề mặt để nguyên vết in, màu men tiết chế, hình dáng mọc lên từ chính logic của vật liệu. Bản phác thảo được phát triển song song với các thử nghiệm đất và men.</p>
+            <h2>Nghiên cứu ý tưởng &amp; ngôn ngữ nghệ thuật</h2>
+            <p>Quá trình sáng tạo bắt đầu từ việc nghiên cứu các nguồn cảm hứng nghệ thuật, văn hóa, tự nhiên và kiến trúc. Những ý tưởng trừu tượng được chuyển hóa thành ngôn ngữ hình khối, đường nét và cấu trúc không gian, tạo nên bản sắc riêng cho từng tác phẩm. C.A.S khai thác đất sét như một chất liệu biểu đạt nghệ thuật, kết hợp tư duy sáng tạo truyền thống với công nghệ tạo hình kỹ thuật số.</p>
           </div>
-          <figure class="pd-block__media">
-            <img src="/assets/img/p-artwork-decor.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Nghiên cứu ý tưởng & ngôn ngữ nghệ thuật">
-          </figure>
+          <figure class="pd-block__media"><img src="/assets/img/pd-n6173-10.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Nghiên cứu ý tưởng &amp; ngôn ngữ nghệ thuật"></figure>
         </div>
       </section>
       <section class="pd-block pd-block--flip" data-reveal>
         <div class="container pd-block__grid">
           <div class="pd-block__text">
             <span class="pd-block__no">02</span>
-            <h2>Phát triển hình dáng & Mô hình hóa kỹ thuật số</h2>
-            <p>Hình dáng được dựng bằng mô hình tham số để có thể thay đổi tỷ lệ, độ dày và nhịp bề mặt mà không phải vẽ lại. Các phương án được so sánh trong không gian thật bằng ảnh dựng trước khi chọn đưa vào in. Mô hình cũng là cơ sở để tính kết cấu đỡ cho những tác phẩm có kích thước lớn.</p>
+            <h2>Phát triển hình dáng &amp; Mô hình hóa kỹ thuật số</h2>
+            <p>Nghiên cứu phương pháp tạo hình và phát triển hình học sản phẩm thông qua mô hình 3D. Ứng dụng Rhino, Grasshopper và Computational Design để kiểm soát hình dáng, độ dày, cấu trúc rỗng, hoa văn và các chi tiết phức tạp, đồng thời tối ưu thiết kế cho công nghệ in 3D đất sét.</p>
           </div>
-          <figure class="pd-block__media">
-            <img src="/assets/img/solution-4.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Phát triển hình dáng & Mô hình hóa kỹ thuật số">
-          </figure>
+          <figure class="pd-block__media"><img src="/assets/img/pd-n6198-27.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Phát triển hình dáng &amp; Mô hình hóa kỹ thuật số"></figure>
         </div>
       </section>
       <section class="pd-block" data-reveal>
         <div class="container pd-block__grid">
           <div class="pd-block__text">
             <span class="pd-block__no">03</span>
-            <h2>In 3D & Chế tạo mẫu thử</h2>
-            <p>Mẫu thử được in trên robot gốm với cùng thông số sẽ dùng cho sản phẩm cuối, để kiểm tra độ đứng, độ mịn và sự ổn định của từng lớp. Những chỗ có nguy cơ võng được chỉnh bằng hướng chạy dao hoặc thêm gân chờ. Mẫu thử cũng giúp khách hàng cảm nhận chất liệu trước khi quyết định sản xuất.</p>
+            <h2>In 3D &amp; Chế tạo mẫu thử</h2>
+            <p>Thiết lập quy trình in dựa trên đặc tính vật liệu và hình học sản phẩm: chuẩn bị đất sét, xử lý phối liệu, thiết lập thông số máy, thiết kế đường chạy đầu in và kiểm soát quá trình đùn vật liệu. Tiến hành in mẫu, đánh giá lỗi tạo hình và điều chỉnh thông số trước khi sản xuất.</p>
           </div>
-          <figure class="pd-block__media">
-            <img src="/assets/img/process-design.webp" width="1250" height="670" loading="lazy" decoding="async" alt="In 3D & Chế tạo mẫu thử">
-          </figure>
+          <figure class="pd-block__media pd-block__media--duo"><img src="/assets/img/pd-n6198-24.webp" width="1250" height="670" loading="lazy" decoding="async" alt="In 3D &amp; Chế tạo mẫu thử"><img src="/assets/img/pd-n6198-25.webp" width="1250" height="670" loading="lazy" decoding="async" alt="In 3D &amp; Chế tạo mẫu thử"></figure>
         </div>
       </section>
       <section class="pd-block pd-block--flip" data-reveal>
         <div class="container pd-block__grid">
           <div class="pd-block__text">
             <span class="pd-block__no">04</span>
-            <h2>Hậu xử lý & Sản xuất gốm hoàn thiện</h2>
-            <p>Sau khi sấy, tác phẩm được làm sạch mối in, phủ men theo từng vùng rồi nung 1200°C. Quá trình nung có thể làm thay đổi nhẹ hình dáng, nên các chi tiết lắp ghép được gia công sau nung. Thành phẩm được kiểm tra màu, bề mặt và độ bền trước khi bàn giao kèm hướng dẫn bảo quản.</p>
+            <h2>Hậu xử lý &amp; Sản xuất gốm hoàn thiện</h2>
+            <p>Xây dựng quy trình hoàn thiện sản phẩm gồm xử lý bề mặt, làm khô có kiểm soát, sửa lỗi, nung và hoàn thiện sau nung. Kiểm tra độ co ngót, biến dạng, nứt vỡ, chất lượng bề mặt và độ đồng nhất giữa các sản phẩm nhằm đảm bảo khả năng sản xuất ổn định.</p>
           </div>
-          <figure class="pd-block__media">
-            <img src="/assets/img/process-production.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Hậu xử lý & Sản xuất gốm hoàn thiện">
-          </figure>
+          <figure class="pd-block__media"><img src="/assets/img/pd-n6198-19.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Hậu xử lý &amp; Sản xuất gốm hoàn thiện"></figure>
         </div>
       </section>
     </div>
-
-    <section class="pd-wide" aria-label="Hình ảnh sản phẩm">
-      <img src="/assets/img/p-artwork-decor.webp" width="2000" height="2000" loading="lazy" decoding="async" alt="ARTWORT & DECOR">
-    </section>
-    <section class="pd-cross" aria-labelledby="cross-title">
-      <div class="container">
-        <h2 class="pd-cross__title" id="cross-title">Sản phẩm khác</h2>
-        <ul class="pd-cross__list">
-          <li><a href="/san-pham/lam-che-nang/">
-            <span>Lam Che Nắng Gốm 3D</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a></li>
-          <li><a href="/san-pham/gach-op-chuyen-mau/">
-            <span>Gạch Ốp Chuyển Màu</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a></li>
-          <li><a href="/san-pham/gach-phu-dieu/">
-            <span>Gạch Phù Điêu In 3D</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a></li>
-          <li><a href="/san-pham/ran-san-ho/">
-            <span>Rạn San Hô In 3D</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="quote-banner" aria-label="Câu nói của Casa+">
-      <img src="/assets/img/quote-banner.webp" width="1865" height="623" loading="lazy" decoding="async"
-           alt="“The second home of Architecture and Design students” – Đông xưởng, Powered by Casa+">
-    </section>
   </main>
 
     <section class="quote-banner" aria-label="Câu nói của Casa+">
@@ -248,5 +198,13 @@
       <a class="to-top" href="#top" data-to-top>Lên đầu trang</a>
     </div>
   </footer>
+  <div class="float-contact" aria-label="Liên hệ nhanh">
+    <a class="float-contact__btn float-contact__btn--phone" href="tel:0765161286" aria-label="Gọi 0765 161 286">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+    </a>
+    <a class="float-contact__btn float-contact__btn--zalo" href="https://zalo.me/0765161286" target="_blank" rel="noopener" aria-label="Nhắn Zalo 0765 161 286">
+      <svg viewBox="0 0 48 48" width="30" height="30" aria-hidden="true"><path fill="#fff" d="M24 5C13 5 5 12.6 5 22c0 5.2 2.5 9.8 6.5 12.9L10 42l7.2-3.5c2 .6 4.5 1 6.8 1 11 0 19-7.6 19-17S35 5 24 5z"/><text x="24" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#0068ff">Zalo</text></svg>
+    </a>
+  </div>
 </body>
 </html>

@@ -40,10 +40,12 @@
         <a class="icon-btn" href="/tai-khoan/" aria-label="Tài khoản" data-nav="account">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </a>
-        <div class="lang-switch" role="group" aria-label="Ngôn ngữ / Language">
-          <button type="button" data-lang-btn="vi" aria-pressed="true" lang="vi">VI</button>
-          <span aria-hidden="true">/</span>
-          <button type="button" data-lang-btn="en" aria-pressed="false" lang="en">EN</button>
+        <div class="lang-switch" data-lang-switch>
+          <button type="button" class="lang-switch__current" aria-haspopup="true" aria-expanded="false" aria-label="Ngôn ngữ / Language" data-lang-toggle><img src="/assets/figma/flag-vn.svg" width="32" height="32" alt="" data-lang-flag></button>
+          <ul class="lang-switch__list" role="group" aria-label="Ngôn ngữ / Language" hidden>
+            <li><button type="button" data-lang-btn="vi" aria-pressed="true" lang="vi" aria-label="Tiếng Việt"><img src="/assets/figma/flag-vn.svg" width="32" height="32" alt=""></button></li>
+            <li><button type="button" data-lang-btn="en" aria-pressed="false" lang="en" aria-label="English"><img src="/assets/figma/flag-en.svg" width="32" height="32" alt=""></button></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -98,22 +100,10 @@
   </div>
 
   <main id="main">
-    <div class="page-top container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <ol>
-          <li><a href="/">Trang Chủ</a></li>
-          <li><a href="/san-pham/">Sản Phẩm</a></li>
-          <li><span aria-current="page">Lam che nắng</span></li>
-        </ol>
-      </nav>
-    </div>
-
     <section class="pd-hero" aria-labelledby="page-title">
-      <img class="pd-hero__bg" src="/assets/img/p-lam-che-nang.webp" width="2000" height="2000" alt="">
+      <img class="pd-hero__bg" src="/assets/img/pd-h1.webp" width="1920" height="468" alt="">
       <div class="container pd-hero__inner">
-        <p class="pd-hero__eyebrow">LAM CHE NẮNG — CẤU TRÚC BIẾT THỞ</p>
         <h1 class="pd-hero__title" id="page-title">FACADE: LAM CHE NẮNG</h1>
-        <p class="pd-hero__lead">Quy trình nghiên cứu vật liệu, thiết kế tham số, in 3D robot và nung 1200°C cho hệ lam che nắng gốm Casa⁺.</p>
       </div>
     </section>
 
@@ -122,24 +112,21 @@
         <div class="container pd-block__grid">
           <div class="pd-block__text">
             <span class="pd-block__no">01</span>
-            <h2>Nghiên cứu & Phát triển Vật liệu</h2>
-            <p>Đất sét và chamotte được phối trộn để cân bằng độ dẻo, độ xốp và độ co ngót. Chamotte — hạt gốm đã nung nghiền nhỏ — giảm nứt khi sấy và giữ ổn định kích thước cho những module lam mỏng, nhô dài. Tính lưu biến của hỗn hợp cũng được thử theo từng biên dạng: đất phải chảy khi chịu lực đùn nhưng đứng yên ngay khi rời đầu in. Mỗi công thức men được nung thử ở 1200°C trên mẫu thật trước khi đưa vào sản xuất.</p>
+            <h2>Nghiên cứu &amp; Phát triển Vật liệu</h2>
+            <p>Để in được các module lớn, cao và phức tạp mà không bị sập đổ khi còn ướt, đất sét không thể dùng loại thông thường mà phải được "đo ni đóng giày":</p>
+            <p>Phát triển cấp phối (Clay Body Formulation): Trộn đất sét tự nhiên với Chamotte (gốm vụn nung trước) hoặc cát thạch anh (20–30%) để giảm độ co ngót và chống nứt. Thêm phụ gia liên kết (polymer tự nhiên/cellulose) và phụ gia hóa dẻo để điều chỉnh độ lưu biến (rheology).</p>
+            <p>Kiểm tra độ nhớt và giới hạn chảy (Yield Stress &amp; Viscoelasticity): Đất sét cần có đặc tính thixotropic (tixô) – tức là đủ lỏng khi bị nén đùn qua vòi in (shear-thinning), nhưng lập tức đông đặc, chịu được tải trọng của hàng trăm lớp in đè lên phía trên ngay sau khi rời vòi phun mà không bị biến dạng.</p>
           </div>
-          <figure class="pd-block__media">
-            <img src="/assets/img/process-research.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Nghiên cứu & Phát triển Vật liệu">
-          </figure>
+          <figure class="pd-block__media"><img src="/assets/img/pd-n6196-64.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Nghiên cứu &amp; Phát triển Vật liệu"></figure>
         </div>
       </section>
-      <section class="pd-block pd-block--flip" data-reveal>
+      <section class="pd-block pd-block--flip pd-block--solo" data-reveal>
         <div class="container pd-block__grid">
           <div class="pd-block__text">
             <span class="pd-block__no">02</span>
-            <h2>Thiết kế Số & Lập trình Chế tạo</h2>
-            <p>Độ dày cánh lam, góc mở, mật độ và nhịp điệu được điều khiển bằng tham số trên Grasshopper. Từ mô hình, hệ thống sinh đường chạy dao xoắn ốc cho robot, quyết định cách vật liệu chồng lớp và hướng lộ của mối in. Kiến trúc sư có thể thay đổi khẩu độ hay mật độ che nắng của cả mảng tường mà vẫn giữ tính nhất quán của hệ thống. Mỗi tham số gắn với một ràng buộc chế tạo: đường kính đầu in, tốc độ đùn, góc nghiêng tối đa và thời gian khô giữa các lớp.</p>
+            <h2>Thiết kế Số &amp; Lập trình Chế tạo</h2>
+            <p>Dựa trên hình học kiến trúc ban đầu, các thuật toán tham số trong Grasshopper được dùng để chia nhỏ diện mặt đứng thành các module panel có kích thước phù hợp với lòng lò nung. Do đất nung thiêu kết sẽ co ngót khoảng 10–15%, mô hình số cần được tính toán bù tỉ lệ nở trước khi xuất đường in. Thay vì cắt lớp thông thường, kỹ sư sẽ lập trình đường chạy dao xoắn ốc liên tục (spiral toolpath) dạng vách đôi, giúp cánh tay robot đùn sợi đất liền mạch, triệt tiêu các điểm dừng đùn gây rỗ hoặc rạn nứt kết cấu.</p>
           </div>
-          <figure class="pd-block__media">
-            <img src="/assets/img/process-design.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Thiết kế Số & Lập trình Chế tạo">
-          </figure>
         </div>
       </section>
       <section class="pd-block" data-reveal>
@@ -147,11 +134,9 @@
           <div class="pd-block__text">
             <span class="pd-block__no">03</span>
             <h2>Quy trình Gia công In 3D</h2>
-            <p>Robot LDM 6 trục đùn hỗn hợp đất theo từng lớp, đầu in xoay theo bề mặt nên tạo được biên dạng tự do mà máy in 3 trục không làm được. Tốc độ đùn và đường kính đầu in được kiểm soát liên tục để cánh lam không võng trong lúc in. Các module được in theo bộ, đánh số và ghép thử thành mảng lớn tại xưởng trước khi sấy.</p>
+            <p>Đất sét sau khi khử sạch bọt khí trong máy đùn chân không sẽ được đưa vào hệ thống bơm trục vít áp lực cao để cấp liệu liên tục cho đầu in trên cánh tay robot 6 trục. Robot thực hiện đùn từng lớp sợi vật liệu theo quỹ đạo chính xác, tạo nên cấu trúc rỗng lượn sóng tự đỡ với bề mặt vân in đồng đều. Quá trình in thường được kiểm soát nhiệt ẩm gắt gao kết hợp hệ thống quạt thổi khí ấm cục bộ, đảm bảo các lớp in bên dưới kịp khô se bề mặt và ổn định cơ học trong suốt thời gian in kéo dài.</p>
           </div>
-          <figure class="pd-block__media">
-            <img src="/assets/img/process-production.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Quy trình Gia công In 3D">
-          </figure>
+          <figure class="pd-block__media"><img src="/assets/img/pd-n6196-61.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Quy trình Gia công In 3D"></figure>
         </div>
       </section>
       <section class="pd-block pd-block--flip" data-reveal>
@@ -159,46 +144,12 @@
           <div class="pd-block__text">
             <span class="pd-block__no">04</span>
             <h2>Xử lý Sau in: Sấy khô, Nung 1200°C và Lắp ghép</h2>
-            <p>Sau khi in, sản phẩm được sấy chậm để tránh chênh lệch ẩm giữa lõi và bề mặt — nguyên nhân chính gây nứt. Nung ở 1200°C ổn định cấu trúc gốm, cố định màu men và tăng độ bền thời tiết. Hệ khung Inox 304 và phụ kiện liên kết được tính theo tải trọng gió; các module được căn chỉnh cao độ, mạch đứng và độ phẳng của toàn bộ mảng lam trước khi bàn giao.</p>
+            <p>Sau khi hoàn thành, khối đất sét ướt được đưa vào buồng vi khí hậu để hạ ẩm cực kỳ chậm nhằm triệt tiêu ứng suất cong vênh do mất nước không đều. Module khô hoàn toàn sẽ trải qua chu trình nung thiêu kết ở nhiệt độ cao 1200°C, chuyển hóa hoàn toàn cấu trúc khoáng sét sang pha gốm sành đặc chắc, chống thấm và chịu lực thời tiết bền bỉ. Cuối cùng, các tấm panel gốm thành phẩm được kiểm tra dung sai, luồn khung xương thép/nhôm ngầm vào khoang rỗng bên trong và neo giữ bằng chốt cơ khí đàn hồi ngoài công trường.</p>
           </div>
-          <figure class="pd-block__media">
-            <img src="/assets/img/process-install.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Xử lý Sau in: Sấy khô, Nung 1200°C và Lắp ghép">
-          </figure>
+          <figure class="pd-block__media"><img src="/assets/img/pd-n6196-65.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Xử lý Sau in: Sấy khô, Nung 1200°C và Lắp ghép"></figure>
         </div>
       </section>
     </div>
-
-    <section class="pd-wide" aria-label="Hình ảnh sản phẩm">
-      <img src="/assets/img/p-lam-che-nang.webp" width="2000" height="2000" loading="lazy" decoding="async" alt="FACADE: LAM CHE NẮNG">
-    </section>
-    <section class="pd-cross" aria-labelledby="cross-title">
-      <div class="container">
-        <h2 class="pd-cross__title" id="cross-title">Sản phẩm khác</h2>
-        <ul class="pd-cross__list">
-          <li><a href="/san-pham/gach-op-chuyen-mau/">
-            <span>Gạch Ốp Chuyển Màu</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a></li>
-          <li><a href="/san-pham/gach-phu-dieu/">
-            <span>Gạch Phù Điêu In 3D</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a></li>
-          <li><a href="/san-pham/artwork-decor/">
-            <span>Artwork &amp; Đồ Decor Gốm</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a></li>
-          <li><a href="/san-pham/ran-san-ho/">
-            <span>Rạn San Hô In 3D</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="quote-banner" aria-label="Câu nói của Casa+">
-      <img src="/assets/img/quote-banner.webp" width="1865" height="623" loading="lazy" decoding="async"
-           alt="“The second home of Architecture and Design students” – Đông xưởng, Powered by Casa+">
-    </section>
   </main>
 
     <section class="quote-banner" aria-label="Câu nói của Casa+">
@@ -248,5 +199,13 @@
       <a class="to-top" href="#top" data-to-top>Lên đầu trang</a>
     </div>
   </footer>
+  <div class="float-contact" aria-label="Liên hệ nhanh">
+    <a class="float-contact__btn float-contact__btn--phone" href="tel:0765161286" aria-label="Gọi 0765 161 286">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+    </a>
+    <a class="float-contact__btn float-contact__btn--zalo" href="https://zalo.me/0765161286" target="_blank" rel="noopener" aria-label="Nhắn Zalo 0765 161 286">
+      <svg viewBox="0 0 48 48" width="30" height="30" aria-hidden="true"><path fill="#fff" d="M24 5C13 5 5 12.6 5 22c0 5.2 2.5 9.8 6.5 12.9L10 42l7.2-3.5c2 .6 4.5 1 6.8 1 11 0 19-7.6 19-17S35 5 24 5z"/><text x="24" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#0068ff">Zalo</text></svg>
+    </a>
+  </div>
 </body>
 </html>

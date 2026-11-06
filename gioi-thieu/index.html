@@ -40,10 +40,12 @@
         <a class="icon-btn" href="/tai-khoan/" aria-label="Tài khoản" data-nav="account">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </a>
-        <div class="lang-switch" role="group" aria-label="Ngôn ngữ / Language">
-          <button type="button" data-lang-btn="vi" aria-pressed="true" lang="vi">VI</button>
-          <span aria-hidden="true">/</span>
-          <button type="button" data-lang-btn="en" aria-pressed="false" lang="en">EN</button>
+        <div class="lang-switch" data-lang-switch>
+          <button type="button" class="lang-switch__current" aria-haspopup="true" aria-expanded="false" aria-label="Ngôn ngữ / Language" data-lang-toggle><img src="/assets/figma/flag-vn.svg" width="32" height="32" alt="" data-lang-flag></button>
+          <ul class="lang-switch__list" role="group" aria-label="Ngôn ngữ / Language" hidden>
+            <li><button type="button" data-lang-btn="vi" aria-pressed="true" lang="vi" aria-label="Tiếng Việt"><img src="/assets/figma/flag-vn.svg" width="32" height="32" alt=""></button></li>
+            <li><button type="button" data-lang-btn="en" aria-pressed="false" lang="en" aria-label="English"><img src="/assets/figma/flag-en.svg" width="32" height="32" alt=""></button></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -114,7 +116,7 @@
           <p class="intro__lead">Nơi mở cánh cửa vào thế giới Rhino với tư duy thiết kế đột phá và chuẩn mực chuyên nghiệp.</p>
         </header>
         <div class="panel__wide" data-reveal>
-          <img src="/assets/img/hero-poster.webp" width="1920" height="1080" alt="Không gian phòng khách với tường gạch gốm đất nung hoàn thiện">
+          <img src="/assets/img/fig-hello.webp" width="1024" height="434" alt="Nghệ nhân vận hành máy in 3D đất sét trong xưởng gốm Casa+">
         </div>
 
         <div class="about" id="ve-chung-toi">
@@ -138,7 +140,7 @@
           <p>Trở thành hệ sinh thái sáng tạo hàng đầu của người Việt trong ứng dụng công nghệ số vào kiến trúc và vật liệu, nơi gốm truyền thống được tiếp nối bằng thuật toán và máy in 3D.</p>
         </div>
         <div class="row__media" data-reveal>
-          <img src="/assets/img/solution-5.webp" width="1920" height="1083" loading="lazy" alt="Tranh phù điêu gốm trong phòng khách">
+          <img src="/assets/img/fig-hello-vision.webp" width="1024" height="572" loading="lazy" alt="Đội ngũ kiến trúc sư trao đổi mẫu gạch gốm và bản vẽ">
         </div>
       </section>
 
@@ -148,7 +150,7 @@
           <p>Kết nối con người – công nghệ – tri thức để đưa ý tưởng thiết kế từ màn hình ra xưởng và vào công trình thật, đồng thời đào tạo thế hệ kiến trúc sư làm chủ thiết kế tham số.</p>
         </div>
         <div class="row__media" data-reveal>
-          <img src="/assets/img/process-research.webp" width="1600" height="893" loading="lazy" alt="Kiến trúc sư làm việc với mô hình thiết kế tham số">
+          <img src="/assets/img/fig-hello-mission.webp" width="1024" height="572" loading="lazy" alt="Công trình mặt dựng gốm đất nung bên bờ biển lúc hoàng hôn">
         </div>
       </section>
 
@@ -158,7 +160,7 @@
           <p>Sáng tạo có cơ sở nghiên cứu. Chính xác trong từng thông số chế tác. Bền vững trong vật liệu và cách làm. Tôn trọng bản sắc Việt trong mỗi sản phẩm.</p>
         </div>
         <div class="row__media" data-reveal>
-          <img src="/assets/img/solution-1.webp" width="1920" height="1081" loading="lazy" alt="Gạch nung ốp tường trong không gian hiện đại">
+          <img src="/assets/img/fig-hello-values.webp" width="1600" height="893" loading="lazy" alt="Khu vực sấy khô, lò nung 1200°C và khu vực lắp dựng">
         </div>
       </section>
     </article>
@@ -211,5 +213,13 @@
       <a class="to-top" href="#top" data-to-top>Lên đầu trang</a>
     </div>
   </footer>
+  <div class="float-contact" aria-label="Liên hệ nhanh">
+    <a class="float-contact__btn float-contact__btn--phone" href="tel:0765161286" aria-label="Gọi 0765 161 286">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+    </a>
+    <a class="float-contact__btn float-contact__btn--zalo" href="https://zalo.me/0765161286" target="_blank" rel="noopener" aria-label="Nhắn Zalo 0765 161 286">
+      <svg viewBox="0 0 48 48" width="30" height="30" aria-hidden="true"><path fill="#fff" d="M24 5C13 5 5 12.6 5 22c0 5.2 2.5 9.8 6.5 12.9L10 42l7.2-3.5c2 .6 4.5 1 6.8 1 11 0 19-7.6 19-17S35 5 24 5z"/><text x="24" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#0068ff">Zalo</text></svg>
+    </a>
+  </div>
 </body>
 </html>

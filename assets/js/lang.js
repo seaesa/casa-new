@@ -23,10 +23,12 @@ const EN = {
 
   'story.title': 'The Casa⁺ Story',
   'story.sub': 'In Living Spaces',
-  'story.lead': 'Traditional values in a modern language — the soul of Vietnamese terracotta, reborn through parametric design and 3D printing.',
+  'story.lead': 'Traditional values in a modern style',
   'story.cta': 'Discover more',
 
   'featured.title': '5 Featured Services & Products',
+  'featured.title1': '5 Services &',
+  'featured.title2': 'Featured Products',
   'featured.all': 'View all',
   'featured.go': 'View details',
   'cta.detail': 'Discover more',
@@ -116,6 +118,9 @@ function apply(lang) {
   document.querySelectorAll('[data-lang-btn]').forEach((btn) => {
     btn.setAttribute('aria-pressed', String(btn.dataset.langBtn === lang));
   });
+  document.querySelectorAll('[data-lang-flag]').forEach((img) => {
+    img.src = lang === 'en' ? '/assets/figma/flag-en.svg' : '/assets/figma/flag-vn.svg';
+  });
 
   translateText(lang);
   relabelPins(lang);
@@ -144,11 +149,30 @@ export function initLang() {
   let lang = readLang();
   if (lang === 'en') apply(lang);
 
+  // The flag opens a small list with both languages; picking one closes it.
+  const closeAll = () => document.querySelectorAll('[data-lang-switch]').forEach((box) => {
+    box.querySelector('.lang-switch__list').hidden = true;
+    box.querySelector('[data-lang-toggle]').setAttribute('aria-expanded', 'false');
+  });
+  document.querySelectorAll('[data-lang-toggle]').forEach((toggle) => {
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const list = toggle.parentElement.querySelector('.lang-switch__list');
+      const open = list.hidden;
+      closeAll();
+      list.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  });
+  document.addEventListener('click', closeAll);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
+
   buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
       lang = btn.dataset.langBtn === 'en' ? 'en' : 'vi';
       storeLang(lang);
       apply(lang);
+      closeAll();
     });
   });
 }

@@ -40,10 +40,12 @@
         <a class="icon-btn" href="/tai-khoan/" aria-label="Tài khoản" data-nav="account">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </a>
-        <div class="lang-switch" role="group" aria-label="Ngôn ngữ / Language">
-          <button type="button" data-lang-btn="vi" aria-pressed="true" lang="vi">VI</button>
-          <span aria-hidden="true">/</span>
-          <button type="button" data-lang-btn="en" aria-pressed="false" lang="en">EN</button>
+        <div class="lang-switch" data-lang-switch>
+          <button type="button" class="lang-switch__current" aria-haspopup="true" aria-expanded="false" aria-label="Ngôn ngữ / Language" data-lang-toggle><img src="/assets/figma/flag-vn.svg" width="32" height="32" alt="" data-lang-flag></button>
+          <ul class="lang-switch__list" role="group" aria-label="Ngôn ngữ / Language" hidden>
+            <li><button type="button" data-lang-btn="vi" aria-pressed="true" lang="vi" aria-label="Tiếng Việt"><img src="/assets/figma/flag-vn.svg" width="32" height="32" alt=""></button></li>
+            <li><button type="button" data-lang-btn="en" aria-pressed="false" lang="en" aria-label="English"><img src="/assets/figma/flag-en.svg" width="32" height="32" alt=""></button></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -98,22 +100,10 @@
   </div>
 
   <main id="main">
-    <div class="page-top container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <ol>
-          <li><a href="/">Trang Chủ</a></li>
-          <li><a href="/san-pham/">Sản Phẩm</a></li>
-          <li><span aria-current="page">Gạch phù điêu</span></li>
-        </ol>
-      </nav>
-    </div>
-
     <section class="pd-hero" aria-labelledby="page-title">
-      <img class="pd-hero__bg" src="/assets/img/p-gach-phu-dieu.webp" width="2000" height="2000" alt="">
+      <img class="pd-hero__bg" src="/assets/img/pd-h3.webp" width="1920" height="468" alt="">
       <div class="container pd-hero__inner">
-        <p class="pd-hero__eyebrow">GẠCH PHÙ ĐIÊU — KIẾN TẠO CHIỀU SÂU BÓNG</p>
         <h1 class="pd-hero__title" id="page-title">FACADE: GẠCH PHÙ ĐIÊU</h1>
-        <p class="pd-hero__lead">Quy trình số hóa phù điêu, in 3D không khuôn đúc và kiểm soát co ngót nhiệt cho gạch phù điêu Casa⁺.</p>
       </div>
     </section>
 
@@ -122,12 +112,10 @@
         <div class="container pd-block__grid">
           <div class="pd-block__text">
             <span class="pd-block__no">01</span>
-            <h2>Số hóa câu chuyện văn hóa & Thuật toán hóa phù điêu</h2>
-            <p>Mỗi bức phù điêu bắt đầu từ một câu chuyện: hoa văn gốm Việt, mô-típ kiến trúc bản địa hay một biểu tượng riêng của công trình. Hình ảnh được số hóa thành bản đồ độ cao, rồi chuyển thành thuật toán điều khiển độ nổi của từng điểm trên bề mặt. Nhờ vậy chi tiết mỹ thuật vẫn giữ được trong khi kết cấu đủ dày để in và nung.</p>
+            <h2>Số hóa câu chuyện văn hóa &amp; Thuật toán hóa phù điêu</h2>
+            <p>Các họa tiết văn hóa truyền thống (hoa văn cổ, sóng nước, biểu tượng lịch sử) được chuyển đổi thành dữ liệu số và bản đồ độ sâu (depth map) trên máy tính. Thuật toán Grasshopper hòa quyện những chi tiết này vào các dải sóng địa hình 3D lớn, đồng thời tự động phân rã bức tranh tường khổng lồ thành hàng trăm module gạch nhỏ. Mọi cao độ nếp gấp và đường nét hoa văn tại mép biên của từng viên gạch đều được tính toán chuẩn xác để khi ráp lại sẽ tạo nên một dải phù điêu liên tục, không bị đứt đoạn hay gãy nhịp thị giác.</p>
           </div>
-          <figure class="pd-block__media">
-            <img src="/assets/img/p-gach-phu-dieu.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Số hóa câu chuyện văn hóa & Thuật toán hóa phù điêu">
-          </figure>
+          <figure class="pd-block__media"><img src="/assets/img/pd-n6203-31.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Số hóa câu chuyện văn hóa &amp; Thuật toán hóa phù điêu"></figure>
         </div>
       </section>
       <section class="pd-block pd-block--flip" data-reveal>
@@ -135,70 +123,30 @@
           <div class="pd-block__text">
             <span class="pd-block__no">02</span>
             <h2>Tự do tạo hình với giải pháp "0 đồng khuôn đúc"</h2>
-            <p>Không cần khuôn, mỗi viên gạch có thể mang một biên dạng khác nhau mà không phát sinh chi phí mở khuôn. Chi phí chuyển sang phần thiết kế và thời gian in, nên các phương án thử nghiệm trở nên rẻ hơn nhiều. Đây là điểm khác biệt so với gốm đúc truyền thống, nơi một khuôn chỉ cho ra một hình.</p>
+            <p>Nếu làm theo phương pháp đúc ép truyền thống, việc chế tạo hàng trăm viên gạch biến thiên độc bản đòi hỏi chi phí sản xuất khuôn thạch cao hoặc silicon vô cùng đắt đỏ và tốn thời gian. Công nghệ in 3D đùn đất sét (LDM) giải quyết triệt để rào cản này bằng cách in trực tiếp từng viên gạch dựa trên mã G-code riêng biệt cho từng vị trí. Cánh tay robot có thể linh hoạt chuyển từ mẫu này sang mẫu khác ngay trên bàn in mà không phát sinh thêm chi phí khuôn gá, hiện thực hóa bài toán cá nhân hóa quy mô lớn một cách kinh tế nhất.</p>
           </div>
-          <figure class="pd-block__media">
-            <img src="/assets/img/solution-1.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Tự do tạo hình với giải pháp "0 đồng khuôn đúc"">
-          </figure>
+          <figure class="pd-block__media"><img src="/assets/img/pd-n6203-34.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Tự do tạo hình với giải pháp "0 đồng khuôn đúc""></figure>
         </div>
       </section>
-      <section class="pd-block" data-reveal>
+      <section class="pd-block pd-block--solo" data-reveal>
         <div class="container pd-block__grid">
           <div class="pd-block__text">
             <span class="pd-block__no">03</span>
-            <h2>Công nghệ G-code mỹ thuật & Khống chế lớp in 3D</h2>
-            <p>Đường chạy dao được sinh theo biên dạng phù điêu, với mật độ lớp dày ở vùng nổi cao và mỏng dần ở vùng phẳng. Việc khống chế chiều cao lớp giúp bề mặt không bị rỗ mà vẫn giữ được độ sắc của cạnh. Nhiệt độ và độ ẩm trong xưởng được theo dõi vì ảnh hưởng trực tiếp đến độ khô giữa các lớp.</p>
+            <h2>Công nghệ G-code mỹ thuật &amp; Khống chế lớp in 3D</h2>
+            <p>Robot không đơn thuần xếp các lớp phẳng ngang mà được lập trình để điêu khắc chất cảm bề mặt ngay trong quá trình di chuyển đầu đùn. Bằng cách điều biến linh hoạt tốc độ di chuyển, hướng dao và lưu lượng đùn đất sét, máy tạo ra các đường gân nổi, khía rãnh vi mô hay bề mặt xước thô mộc đặc trưng của phù điêu gốm. Các góc vát và chi tiết nhô ra đều được khống chế góc dốc tự đỡ (dưới 45°), giúp phôi đất đứng vững chắc mà không cần vật liệu chống đỡ, giữ nguyên độ sắc nét và tính toàn vẹn của họa tiết sau khi in.</p>
           </div>
-          <figure class="pd-block__media">
-            <img src="/assets/img/process-production.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Công nghệ G-code mỹ thuật & Khống chế lớp in 3D">
-          </figure>
         </div>
       </section>
-      <section class="pd-block pd-block--flip" data-reveal>
+      <section class="pd-block pd-block--flip pd-block--solo" data-reveal>
         <div class="container pd-block__grid">
           <div class="pd-block__text">
             <span class="pd-block__no">04</span>
-            <h2>Kiểm soát co ngót nhiệt 1200°C & Giải pháp lắp dựng ngoài thực tế</h2>
-            <p>Phù điêu dày hơn gạch ốp nên co ngót không đều dễ gây nứt; mô hình được bù co theo từng vùng dày mỏng. Sau nung, từng viên được kiểm tra độ phẳng và sai số cạnh trước khi đóng gói. Ngoài công trình, hệ khung và keo chuyên dụng giữ các viên ổn định trước tải trọng gió và rung động.</p>
+            <h2>Kiểm soát co ngót nhiệt 1200°C &amp; Giải pháp lắp dựng ngoài thực tế</h2>
+            <p>Do bức phù điêu có độ dày mỏng chênh lệch lớn giữa các vùng hoa văn, nguy cơ nứt vỡ và cong vênh do co ngót 10–15% khi thi công sấy nung ở 1200°C là rất cao. Mô hình số được lập trình bù trừ tỉ lệ co ngót phi tuyến tính cho từng viên, kết hợp quy trình sấy chậm trong buồng vi khí hậu trước khi nung sành hóa đạt độ bền đá nhân tạo. Mặt sau mỗi viên gạch được tạo sẵn rãnh ngàm cơ khí giúp liên kết chặt chẽ vào hệ khung chịu lực, kết hợp ke định vị để giấu kín các mối nối gạch vào nếp sóng tự nhiên ngoài công trường.</p>
           </div>
-          <figure class="pd-block__media">
-            <img src="/assets/img/process-install.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Kiểm soát co ngót nhiệt 1200°C & Giải pháp lắp dựng ngoài thực tế">
-          </figure>
         </div>
       </section>
     </div>
-
-    <section class="pd-wide" aria-label="Hình ảnh sản phẩm">
-      <img src="/assets/img/p-gach-phu-dieu.webp" width="2000" height="2000" loading="lazy" decoding="async" alt="FACADE: GẠCH PHÙ ĐIÊU">
-    </section>
-    <section class="pd-cross" aria-labelledby="cross-title">
-      <div class="container">
-        <h2 class="pd-cross__title" id="cross-title">Sản phẩm khác</h2>
-        <ul class="pd-cross__list">
-          <li><a href="/san-pham/lam-che-nang/">
-            <span>Lam Che Nắng Gốm 3D</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a></li>
-          <li><a href="/san-pham/gach-op-chuyen-mau/">
-            <span>Gạch Ốp Chuyển Màu</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a></li>
-          <li><a href="/san-pham/artwork-decor/">
-            <span>Artwork &amp; Đồ Decor Gốm</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a></li>
-          <li><a href="/san-pham/ran-san-ho/">
-            <span>Rạn San Hô In 3D</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="quote-banner" aria-label="Câu nói của Casa+">
-      <img src="/assets/img/quote-banner.webp" width="1865" height="623" loading="lazy" decoding="async"
-           alt="“The second home of Architecture and Design students” – Đông xưởng, Powered by Casa+">
-    </section>
   </main>
 
     <section class="quote-banner" aria-label="Câu nói của Casa+">
@@ -248,5 +196,13 @@
       <a class="to-top" href="#top" data-to-top>Lên đầu trang</a>
     </div>
   </footer>
+  <div class="float-contact" aria-label="Liên hệ nhanh">
+    <a class="float-contact__btn float-contact__btn--phone" href="tel:0765161286" aria-label="Gọi 0765 161 286">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+    </a>
+    <a class="float-contact__btn float-contact__btn--zalo" href="https://zalo.me/0765161286" target="_blank" rel="noopener" aria-label="Nhắn Zalo 0765 161 286">
+      <svg viewBox="0 0 48 48" width="30" height="30" aria-hidden="true"><path fill="#fff" d="M24 5C13 5 5 12.6 5 22c0 5.2 2.5 9.8 6.5 12.9L10 42l7.2-3.5c2 .6 4.5 1 6.8 1 11 0 19-7.6 19-17S35 5 24 5z"/><text x="24" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#0068ff">Zalo</text></svg>
+    </a>
+  </div>
 </body>
 </html>

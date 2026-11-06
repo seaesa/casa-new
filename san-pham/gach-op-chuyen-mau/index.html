@@ -40,10 +40,12 @@
         <a class="icon-btn" href="/tai-khoan/" aria-label="Tài khoản" data-nav="account">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </a>
-        <div class="lang-switch" role="group" aria-label="Ngôn ngữ / Language">
-          <button type="button" data-lang-btn="vi" aria-pressed="true" lang="vi">VI</button>
-          <span aria-hidden="true">/</span>
-          <button type="button" data-lang-btn="en" aria-pressed="false" lang="en">EN</button>
+        <div class="lang-switch" data-lang-switch>
+          <button type="button" class="lang-switch__current" aria-haspopup="true" aria-expanded="false" aria-label="Ngôn ngữ / Language" data-lang-toggle><img src="/assets/figma/flag-vn.svg" width="32" height="32" alt="" data-lang-flag></button>
+          <ul class="lang-switch__list" role="group" aria-label="Ngôn ngữ / Language" hidden>
+            <li><button type="button" data-lang-btn="vi" aria-pressed="true" lang="vi" aria-label="Tiếng Việt"><img src="/assets/figma/flag-vn.svg" width="32" height="32" alt=""></button></li>
+            <li><button type="button" data-lang-btn="en" aria-pressed="false" lang="en" aria-label="English"><img src="/assets/figma/flag-en.svg" width="32" height="32" alt=""></button></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -98,36 +100,21 @@
   </div>
 
   <main id="main">
-    <div class="page-top container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <ol>
-          <li><a href="/">Trang Chủ</a></li>
-          <li><a href="/san-pham/">Sản Phẩm</a></li>
-          <li><span aria-current="page">Gạch ốp chuyển màu</span></li>
-        </ol>
-      </nav>
-    </div>
-
     <section class="pd-hero" aria-labelledby="page-title">
-      <img class="pd-hero__bg" src="/assets/img/p-gach-op-chuyen-mau.webp" width="2000" height="2000" alt="">
+      <img class="pd-hero__bg" src="/assets/img/pd-h2.webp" width="1920" height="468" alt="">
       <div class="container pd-hero__inner">
-        <p class="pd-hero__eyebrow">GẠCH ỐP CHUYỂN MÀU — VŨ ĐIỆU MEN CHẢY 1200°C</p>
         <h1 class="pd-hero__title" id="page-title">FACADE: GẠCH ỐP CHUYỂN MÀU</h1>
-        <p class="pd-hero__lead">Quy trình tạo bề mặt gốm chuyển màu liên tục bằng thuật toán hoa văn, G-code khía rãnh vi mô và nung 1200°C.</p>
       </div>
     </section>
 
     <div class="pd-body">
-      <section class="pd-block" data-reveal>
+      <section class="pd-block pd-block--solo" data-reveal>
         <div class="container pd-block__grid">
           <div class="pd-block__text">
             <span class="pd-block__no">01</span>
-            <h2>Thuật toán phân tích hoa văn & liên kết bước sóng 3D liên tục</h2>
-            <p>Bề mặt gạch được xây từ một trường hoa văn liên tục, không lặp module. Thuật toán phân tích ảnh tham chiếu, tách thành các dải sáng tối rồi chuyển thành bước sóng hình học nối liền giữa các viên gạch. Nhờ đó mảng tường đọc như một bức tranh duy nhất thay vì các ô rời rạc, và độ tương phản có thể hiệu chỉnh ngay trong mô hình trước khi in.</p>
+            <h2>Thuật toán phân tích hoa văn &amp; liên kết bước sóng 3D liên tục</h2>
+            <p>Quá trình sáng tạo bắt đầu từ việc nghiên cứu các nguồn cảm hứng nghệ thuật, văn hóa, tự nhiên và kiến trúc. Những ý tưởng trừu tượng được chuyển hóa thành ngôn ngữ hình khối, đường nét và cấu trúc không gian, tạo nên bản sắc riêng cho từng tác phẩm. C.A.S khai thác đất sét như một chất liệu biểu đạt nghệ thuật, kết hợp tư duy sáng tạo truyền thống với công nghệ tạo hình kỹ thuật số.</p>
           </div>
-          <figure class="pd-block__media">
-            <img src="/assets/img/p-gach-op-chuyen-mau.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Thuật toán phân tích hoa văn & liên kết bước sóng 3D liên tục">
-          </figure>
         </div>
       </section>
       <section class="pd-block pd-block--flip" data-reveal>
@@ -135,11 +122,9 @@
           <div class="pd-block__text">
             <span class="pd-block__no">02</span>
             <h2>Lập trình G-code khía rãnh vi mô dẫn hướng dòng chảy men hỏa biến</h2>
-            <p>Mỗi viên gạch có hệ rãnh vi mô trên bề mặt, sâu và rộng khác nhau theo vị trí. G-code điều khiển đầu in tạo các rãnh này để dẫn dòng men khi nung: men chảy theo rãnh, tạo vệt màu loang đúng ý đồ. Độ sâu, khoảng cách và hướng rãnh là ba tham số quyết định hình thái cuối cùng của bề mặt.</p>
+            <p>Trọng tâm của kỹ thuật "Painting with Shapes" (Vẽ bằng hình học) là việc dùng G-code để in các khía rãnh vi mô (micro-textures) có chiều sâu và mật độ biến thiên trực tiếp theo biểu đồ chuyển sắc (gradient). Trên máy tính, các vùng tối sẫm màu sẽ được lập trình in thành những rãnh sâu và dốc để thu hút men chảy về, trong khi các gờ nổi nông hoặc phẳng được thiết kế ở các vùng sáng để men dễ dàng chảy tràn đi. Quá trình di chuyển của đầu in 3D tạo ra những "kênh dẫn hướng" siêu nhỏ, kiểm soát chính xác hướng di chuyển của men lỏng, biến hình học in trở thành công cụ chủ động tạo màu tự thân.</p>
           </div>
-          <figure class="pd-block__media">
-            <img src="/assets/img/solution-5.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Lập trình G-code khía rãnh vi mô dẫn hướng dòng chảy men hỏa biến">
-          </figure>
+          <figure class="pd-block__media"><img src="/assets/img/pd-n6165-190.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Lập trình G-code khía rãnh vi mô dẫn hướng dòng chảy men hỏa biến"></figure>
         </div>
       </section>
       <section class="pd-block" data-reveal>
@@ -147,58 +132,21 @@
           <div class="pd-block__text">
             <span class="pd-block__no">03</span>
             <h2>Khúc xạ ánh sáng và biến chuyển sắc độ tại nhiệt độ nung 1200°C</h2>
-            <p>Ở 1200°C, men chảy và tương tác với oxit màu trong lớp đất bên dưới, tạo dải chuyển tiếp không lặp lại. Bề mặt bóng khúc xạ ánh sáng theo góc nhìn, nên màu tường đổi theo thời điểm trong ngày. Mỗi mẻ nung được ghi lại nhiệt độ, tốc độ nâng nhiệt và thời gian giữ nhiệt để có thể tái lập kết quả.</p>
+            <p>Ở nhiệt độ thiêu kết cao 1200°C, men gốm chuyển hóa thành thủy tinh lỏng sệt và tự động chảy dưới tác động của trọng lực và sức căng bề mặt. Tại các rãnh sâu do robot in 3D tạo ra, men sẽ lắng tụ dày (từ 1,5 - 3mm), tích tụ các oxit kim loại tạo nên sắc xanh đại dương sẫm màu, bóng bẩy và có chiều sâu tối đa. Ngược lại, tại các gờ cao và đỉnh sóng, lớp men bị kéo mỏng (chỉ còn 0,2 - 0,5mm), làm lộ màu sáng của cốt gốm. Hiệu ứng đọng men tự nhiên này kết hợp với độ trong suốt của men thủy tinh tạo ra các dải màu gradient đa chiều, có khả năng thay đổi sắc độ sống động theo góc chiếu của ánh sáng và tầm nhìn.</p>
           </div>
-          <figure class="pd-block__media">
-            <img src="/assets/img/process-design.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Khúc xạ ánh sáng và biến chuyển sắc độ tại nhiệt độ nung 1200°C">
-          </figure>
+          <figure class="pd-block__media"><img src="/assets/img/pd-n6197-84.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Khúc xạ ánh sáng và biến chuyển sắc độ tại nhiệt độ nung 1200°C"></figure>
         </div>
       </section>
-      <section class="pd-block pd-block--flip" data-reveal>
+      <section class="pd-block pd-block--flip pd-block--solo" data-reveal>
         <div class="container pd-block__grid">
           <div class="pd-block__text">
             <span class="pd-block__no">04</span>
             <h2>Chế tạo, kiểm soát co ngót và kỹ thuật lắp ghép bức tranh tường</h2>
-            <p>Co ngót khi sấy và nung được bù ngay trong mô hình in, sau đó kiểm tra lại trên từng viên trước khi ghép. Các viên được đánh số theo bản đồ hoa văn và lắp theo đúng trình tự để mạch hình không lệch. Hệ keo và phụ kiện chịu được rung và giãn nở nhiệt của mặt dựng ngoài trời.</p>
+            <p>Quá trình nung sành hóa ở 1200°C khiến đất sét và lớp men thủy tinh co ngót mạnh (10-15%), dễ gây ra ứng suất nhiệt, nứt vỡ hoặc cong vênh tại các khu vực rãnh sâu. Để khắc phục, mặt sau của từng viên gạch được thiết kế các gân tăng cứng và rãnh rỗng giúp giải phóng áp lực nhiệt, đồng thời tạo độ bám tối ưu cho vữa dán. Khi hoàn thiện, các viên gạch sẽ được xử lý mài cạnh tinh xảo và lắp ghép tỉ mỉ lên hệ khung xương ngoài công trường. Sự kết hợp giữa ke cân bằng và định vị laser giúp các đường nối gạch chìm vào các nếp sóng, hoàn thiện một bức tranh tường 3D chuyển màu khổng lồ, bền bỉ trước mọi tác động thời tiết.</p>
           </div>
-          <figure class="pd-block__media">
-            <img src="/assets/img/process-production.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Chế tạo, kiểm soát co ngót và kỹ thuật lắp ghép bức tranh tường">
-          </figure>
         </div>
       </section>
     </div>
-
-    <section class="pd-wide" aria-label="Hình ảnh sản phẩm">
-      <img src="/assets/img/p-gach-op-chuyen-mau.webp" width="2000" height="2000" loading="lazy" decoding="async" alt="FACADE: GẠCH ỐP CHUYỂN MÀU">
-    </section>
-    <section class="pd-cross" aria-labelledby="cross-title">
-      <div class="container">
-        <h2 class="pd-cross__title" id="cross-title">Sản phẩm khác</h2>
-        <ul class="pd-cross__list">
-          <li><a href="/san-pham/lam-che-nang/">
-            <span>Lam Che Nắng Gốm 3D</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a></li>
-          <li><a href="/san-pham/gach-phu-dieu/">
-            <span>Gạch Phù Điêu In 3D</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a></li>
-          <li><a href="/san-pham/artwork-decor/">
-            <span>Artwork &amp; Đồ Decor Gốm</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a></li>
-          <li><a href="/san-pham/ran-san-ho/">
-            <span>Rạn San Hô In 3D</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="quote-banner" aria-label="Câu nói của Casa+">
-      <img src="/assets/img/quote-banner.webp" width="1865" height="623" loading="lazy" decoding="async"
-           alt="“The second home of Architecture and Design students” – Đông xưởng, Powered by Casa+">
-    </section>
   </main>
 
     <section class="quote-banner" aria-label="Câu nói của Casa+">
@@ -248,5 +196,13 @@
       <a class="to-top" href="#top" data-to-top>Lên đầu trang</a>
     </div>
   </footer>
+  <div class="float-contact" aria-label="Liên hệ nhanh">
+    <a class="float-contact__btn float-contact__btn--phone" href="tel:0765161286" aria-label="Gọi 0765 161 286">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+    </a>
+    <a class="float-contact__btn float-contact__btn--zalo" href="https://zalo.me/0765161286" target="_blank" rel="noopener" aria-label="Nhắn Zalo 0765 161 286">
+      <svg viewBox="0 0 48 48" width="30" height="30" aria-hidden="true"><path fill="#fff" d="M24 5C13 5 5 12.6 5 22c0 5.2 2.5 9.8 6.5 12.9L10 42l7.2-3.5c2 .6 4.5 1 6.8 1 11 0 19-7.6 19-17S35 5 24 5z"/><text x="24" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#0068ff">Zalo</text></svg>
+    </a>
+  </div>
 </body>
 </html>

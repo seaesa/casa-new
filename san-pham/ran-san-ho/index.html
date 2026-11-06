@@ -40,10 +40,12 @@
         <a class="icon-btn" href="/tai-khoan/" aria-label="Tài khoản" data-nav="account">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </a>
-        <div class="lang-switch" role="group" aria-label="Ngôn ngữ / Language">
-          <button type="button" data-lang-btn="vi" aria-pressed="true" lang="vi">VI</button>
-          <span aria-hidden="true">/</span>
-          <button type="button" data-lang-btn="en" aria-pressed="false" lang="en">EN</button>
+        <div class="lang-switch" data-lang-switch>
+          <button type="button" class="lang-switch__current" aria-haspopup="true" aria-expanded="false" aria-label="Ngôn ngữ / Language" data-lang-toggle><img src="/assets/figma/flag-vn.svg" width="32" height="32" alt="" data-lang-flag></button>
+          <ul class="lang-switch__list" role="group" aria-label="Ngôn ngữ / Language" hidden>
+            <li><button type="button" data-lang-btn="vi" aria-pressed="true" lang="vi" aria-label="Tiếng Việt"><img src="/assets/figma/flag-vn.svg" width="32" height="32" alt=""></button></li>
+            <li><button type="button" data-lang-btn="en" aria-pressed="false" lang="en" aria-label="English"><img src="/assets/figma/flag-en.svg" width="32" height="32" alt=""></button></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -98,22 +100,10 @@
   </div>
 
   <main id="main">
-    <div class="page-top container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <ol>
-          <li><a href="/">Trang Chủ</a></li>
-          <li><a href="/san-pham/">Sản Phẩm</a></li>
-          <li><span aria-current="page">Rạn san hô</span></li>
-        </ol>
-      </nav>
-    </div>
-
     <section class="pd-hero" aria-labelledby="page-title">
-      <img class="pd-hero__bg" src="/assets/img/p-ran-san-ho.webp" width="2000" height="2000" alt="">
+      <img class="pd-hero__bg" src="/assets/img/pd-h5.webp" width="1920" height="468" alt="">
       <div class="container pd-hero__inner">
-        <p class="pd-hero__eyebrow">RẠN SAN HÔ — TÁI TẠO HỆ SINH THÁI</p>
         <h1 class="pd-hero__title" id="page-title">RẠN SAN HÔ</h1>
-        <p class="pd-hero__lead">Quy trình nghiên cứu cấu trúc san hô, thiết kế tham số và in 3D giá thể đất nung cho phục hồi rạn.</p>
       </div>
     </section>
 
@@ -122,83 +112,43 @@
         <div class="container pd-block__grid">
           <div class="pd-block__text">
             <span class="pd-block__no">01</span>
-            <h2>Nghiên cứu hệ sinh thái & cấu trúc san hô</h2>
-            <p>Cấu trúc san hô thật được nghiên cứu theo mật độ nhánh, kích thước lỗ và độ xốp — những yếu tố quyết định nơi trú ngụ của sinh vật biển. Casa⁺ chuyển các đặc điểm đó thành quy tắc hình học thay vì sao chép hình dáng bên ngoài. Mục tiêu là tạo giá thể có đủ độ rỗng và diện bám cho san hô non.</p>
+            <h2>Nghiên cứu hệ sinh thái &amp; cấu trúc san hô</h2>
+            <p>Nghiên cứu hình thái san hô tự nhiên, điều kiện môi trường biển và đặc điểm bề mặt giúp san hô bám, phát triển. Đây là cơ sở để xác định cấu trúc, độ rỗng và hình học của giá thể nhân tạo, hướng đến khả năng hỗ trợ phục hồi hệ sinh thái biển.</p>
           </div>
-          <figure class="pd-block__media">
-            <img src="/assets/img/p-ran-san-ho.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Nghiên cứu hệ sinh thái & cấu trúc san hô">
-          </figure>
+          <figure class="pd-block__media"><img src="/assets/img/pd-n6165-303.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Nghiên cứu hệ sinh thái &amp; cấu trúc san hô"></figure>
         </div>
       </section>
       <section class="pd-block pd-block--flip" data-reveal>
         <div class="container pd-block__grid">
           <div class="pd-block__text">
             <span class="pd-block__no">02</span>
-            <h2>Thiết kế hình học & mô hình tham số</h2>
-            <p>Mô hình tham số cho phép thay đổi mật độ nhánh, đường kính và độ dày thành theo từng vùng của giá thể. Các tham số được gắn với điều kiện thực tế: dòng chảy, độ sâu và ánh sáng tại vị trí thả. Nhờ vậy cùng một hệ thống có thể tạo nhiều biến thể phù hợp với từng rạn khác nhau.</p>
+            <h2>Thiết kế hình học &amp; mô hình tham số</h2>
+            <p>Từ dữ liệu nghiên cứu, hình thái san hô được chuyển hóa thành mô hình 3D với các nhánh, rãnh và khoang rỗng được kiểm soát. Công cụ thiết kế tham số cho phép phát triển nhiều cấu hình khác nhau nhằm thử nghiệm khả năng bám của san hô, độ ổn định kết cấu và sự tương tác với dòng nước.</p>
           </div>
-          <figure class="pd-block__media">
-            <img src="/assets/img/solution-6.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Thiết kế hình học & mô hình tham số">
-          </figure>
+          <figure class="pd-block__media"><img src="/assets/img/pd-n6165-304.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Thiết kế hình học &amp; mô hình tham số"></figure>
         </div>
       </section>
       <section class="pd-block" data-reveal>
         <div class="container pd-block__grid">
           <div class="pd-block__text">
             <span class="pd-block__no">03</span>
-            <h2>Thử nghiệm vật liệu & chế tác in 3D</h2>
-            <p>Đất nung được phối trộn để tăng độ xốp và độ bám sinh học sau khi nung. Mẫu được in, nung rồi ngâm thử trong nước biển để theo dõi độ ổn định và sự phát triển của vi sinh vật bám. Kết quả thử nghiệm quyết định tỷ lệ phối trộn và mật độ lớp in cho từng lô sản xuất.</p>
+            <h2>Thử nghiệm vật liệu &amp; chế tác in 3D</h2>
+            <p>Mô hình được chuyển thành giá thể bằng đất sét thông qua công nghệ in 3D, sau đó sấy và nung thành vật liệu terracotta. Thành phần đất sét, độ bền sau nung, cấu trúc bề mặt và khả năng chịu môi trường biển cần được thử nghiệm để xác định tính phù hợp trước khi triển khai thực tế.</p>
           </div>
-          <figure class="pd-block__media">
-            <img src="/assets/img/process-research.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Thử nghiệm vật liệu & chế tác in 3D">
-          </figure>
+          <figure class="pd-block__media"><img src="/assets/img/pd-n6194-16.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Thử nghiệm vật liệu &amp; chế tác in 3D"></figure>
         </div>
       </section>
       <section class="pd-block pd-block--flip" data-reveal>
         <div class="container pd-block__grid">
           <div class="pd-block__text">
             <span class="pd-block__no">04</span>
-            <h2>Triển khai dưới biển & theo dõi phục hồi</h2>
-            <p>Giá thể được gắn vào khung đỡ và hạ xuống vị trí đã khảo sát, cố định để không bị xô khi có dòng mạnh. Sau khi thả, Casa⁺ phối hợp với đơn vị bảo tồn theo dõi tỷ lệ sống và tốc độ phát triển của san hô cấy. Dữ liệu thu được quay lại điều chỉnh thiết kế cho các đợt tiếp theo.</p>
+            <h2>Triển khai dưới biển &amp; theo dõi phục hồi</h2>
+            <p>Cá thể sau khi hoàn thiện được đánh giá về độ ổn định, mức độ phù hợp sinh thái và khả năng hỗ trợ san hô bám trước khi triển khai tại địa điểm được cấp phép. Việc theo dõi tỷ lệ sống, tăng trưởng của san hô và tác động đến sinh vật xung quanh là cơ sở để đánh giá hiệu quả thực tế của giải pháp.</p>
           </div>
-          <figure class="pd-block__media">
-            <img src="/assets/img/process-install.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Triển khai dưới biển & theo dõi phục hồi">
-          </figure>
+          <figure class="pd-block__media"><img src="/assets/img/pd-n6165-305.webp" width="1250" height="670" loading="lazy" decoding="async" alt="Triển khai dưới biển &amp; theo dõi phục hồi"></figure>
         </div>
       </section>
     </div>
-
-    <section class="pd-wide" aria-label="Hình ảnh sản phẩm">
-      <img src="/assets/img/p-ran-san-ho.webp" width="2000" height="2000" loading="lazy" decoding="async" alt="RẠN SAN HÔ">
-    </section>
-    <section class="pd-cross" aria-labelledby="cross-title">
-      <div class="container">
-        <h2 class="pd-cross__title" id="cross-title">Sản phẩm khác</h2>
-        <ul class="pd-cross__list">
-          <li><a href="/san-pham/lam-che-nang/">
-            <span>Lam Che Nắng Gốm 3D</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a></li>
-          <li><a href="/san-pham/gach-op-chuyen-mau/">
-            <span>Gạch Ốp Chuyển Màu</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a></li>
-          <li><a href="/san-pham/gach-phu-dieu/">
-            <span>Gạch Phù Điêu In 3D</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a></li>
-          <li><a href="/san-pham/artwork-decor/">
-            <span>Artwork &amp; Đồ Decor Gốm</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="quote-banner" aria-label="Câu nói của Casa+">
-      <img src="/assets/img/quote-banner.webp" width="1865" height="623" loading="lazy" decoding="async"
-           alt="“The second home of Architecture and Design students” – Đông xưởng, Powered by Casa+">
-    </section>
   </main>
 
     <section class="quote-banner" aria-label="Câu nói của Casa+">
@@ -248,5 +198,13 @@
       <a class="to-top" href="#top" data-to-top>Lên đầu trang</a>
     </div>
   </footer>
+  <div class="float-contact" aria-label="Liên hệ nhanh">
+    <a class="float-contact__btn float-contact__btn--phone" href="tel:0765161286" aria-label="Gọi 0765 161 286">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+    </a>
+    <a class="float-contact__btn float-contact__btn--zalo" href="https://zalo.me/0765161286" target="_blank" rel="noopener" aria-label="Nhắn Zalo 0765 161 286">
+      <svg viewBox="0 0 48 48" width="30" height="30" aria-hidden="true"><path fill="#fff" d="M24 5C13 5 5 12.6 5 22c0 5.2 2.5 9.8 6.5 12.9L10 42l7.2-3.5c2 .6 4.5 1 6.8 1 11 0 19-7.6 19-17S35 5 24 5z"/><text x="24" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#0068ff">Zalo</text></svg>
+    </a>
+  </div>
 </body>
 </html>
